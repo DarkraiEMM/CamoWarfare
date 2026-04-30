@@ -41,7 +41,7 @@ For Modrinth and CurseForge, use:
 - Name: CamoWarfare
 - Mod loader: NeoForge
 - Minecraft version: 1.21.1
-- Version: 1.3
+- Version: 1.3.1
 - Release type: Release
 - Required dependency: NeoForge
 - Optional dependency: JEI
