@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/urban_digital_standard_block_0"
+                                    }
+                      }
+                  ]
+}

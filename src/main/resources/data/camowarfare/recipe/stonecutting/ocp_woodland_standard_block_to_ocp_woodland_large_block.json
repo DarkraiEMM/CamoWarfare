@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:ocp_woodland_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:ocp_woodland_large_block",
+                   "count":  1
+               }
+}

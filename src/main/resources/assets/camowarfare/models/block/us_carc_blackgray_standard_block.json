@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/us_carc_blackgray_standard_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/us_carc_blackgray/variant_1"
+                 }
+}

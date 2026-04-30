@@ -1,0 +1,6 @@
+{
+  "selector": "#camowarfare:add_on_armor_blocks",
+  "properties": {
+    "sable:mass": 0.5
+  }
+}

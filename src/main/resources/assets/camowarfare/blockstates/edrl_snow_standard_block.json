@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/edrl_snow_standard_block_0"
+                                    }
+                      }
+                  ]
+}

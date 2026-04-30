@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/ocp_woodland_large_block_0"
+                                    }
+                      }
+                  ]
+}

@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:us_carc_desert_tan_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_digital"
+                        },
+                        {
+                            "item":  "minecraft:redstone"
+                        },
+                        {
+                            "item":  "minecraft:yellow_dye"
+                        },
+                        {
+                            "item":  "minecraft:brown_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:pla_desert_standard_block",
+                   "count":  1
+               }
+}

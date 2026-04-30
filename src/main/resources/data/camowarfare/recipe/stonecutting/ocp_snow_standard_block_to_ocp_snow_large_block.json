@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:ocp_snow_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:ocp_snow_large_block",
+                   "count":  1
+               }
+}

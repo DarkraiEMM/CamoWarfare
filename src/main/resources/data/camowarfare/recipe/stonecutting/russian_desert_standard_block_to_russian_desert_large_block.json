@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:russian_desert_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:russian_desert_large_block",
+                   "count":  1
+               }
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+        "tag":  "camowarfare:armor_plate_concretes"
+    },
+    {
+        "tag":  "camowarfare:armor_plate_concretes"
+    },
+    {
+        "item":  "minecraft:iron_block"
+    },
+    {
+        "item":  "minecraft:iron_block"
+    }
+  ],
+  "results": [
+    {
+        "id":  "camowarfare:armor_plate_block",
+        "count":  4
+    }
+  ]
+}

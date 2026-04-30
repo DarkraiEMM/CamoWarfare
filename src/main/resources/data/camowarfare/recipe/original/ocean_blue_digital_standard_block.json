@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:solid_bluegray_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_digital"
+                        },
+                        {
+                            "item":  "minecraft:redstone"
+                        },
+                        {
+                            "item":  "minecraft:lapis_lazuli"
+                        },
+                        {
+                            "item":  "minecraft:cyan_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:ocean_blue_digital_standard_block",
+                   "count":  1
+               }
+}

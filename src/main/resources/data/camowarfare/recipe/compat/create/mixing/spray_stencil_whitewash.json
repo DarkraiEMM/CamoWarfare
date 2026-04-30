@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "create"
+                                }
+                            ],
+    "type":  "create:mixing",
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:paper"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:bone_meal"
+                        },
+                        {
+                            "item":  "minecraft:white_dye"
+                        }
+                    ],
+    "results":  [
+                    {
+                        "id":  "camowarfare:spray_stencil_whitewash",
+                        "count":  1
+                    }
+                ]
+}

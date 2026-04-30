@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:paper"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:lime_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:spray_stencil_multiterrain",
+                   "count":  1
+               }
+}

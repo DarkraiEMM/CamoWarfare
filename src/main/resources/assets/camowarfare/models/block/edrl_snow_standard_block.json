@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/edrl_snow_standard_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/edrl_snow/variant_1"
+                 }
+}

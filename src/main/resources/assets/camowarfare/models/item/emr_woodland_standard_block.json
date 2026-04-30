@@ -1,0 +1,6 @@
+{
+    "parent":  "minecraft:block/cube_all",
+    "textures":  {
+                     "all":  "camowarfare:block/emr_woodland/variant_1"
+                 }
+}

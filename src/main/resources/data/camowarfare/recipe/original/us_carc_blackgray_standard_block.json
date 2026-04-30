@@ -1,0 +1,19 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:armor_plate_block"
+                        },
+                        {
+                            "item":  "minecraft:black_dye"
+                        },
+                        {
+                            "item":  "minecraft:gray_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:us_carc_blackgray_standard_block",
+                   "count":  1
+               }
+}

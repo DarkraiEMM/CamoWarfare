@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "create"
+                                }
+                            ],
+    "type":  "create:mixing",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:armor_plate_block"
+                        },
+                        {
+                            "item":  "minecraft:black_dye"
+                        }
+                    ],
+    "results":  [
+                    {
+                        "id":  "camowarfare:solid_night_black_standard_block",
+                        "count":  1
+                    }
+                ]
+}

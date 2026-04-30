@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/edrl_urban_large_block_0"
+                                    }
+                      }
+                  ]
+}

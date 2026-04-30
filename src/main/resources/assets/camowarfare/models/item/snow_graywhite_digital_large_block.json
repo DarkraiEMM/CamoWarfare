@@ -1,0 +1,6 @@
+{
+    "parent":  "minecraft:block/cube_all",
+    "textures":  {
+                     "all":  "camowarfare:block/snow_graywhite_digital/variant_1"
+                 }
+}

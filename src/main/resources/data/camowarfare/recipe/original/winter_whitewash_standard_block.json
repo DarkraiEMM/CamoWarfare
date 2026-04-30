@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:solid_bluegray_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_whitewash"
+                        },
+                        {
+                            "item":  "minecraft:bone_meal"
+                        },
+                        {
+                            "item":  "minecraft:white_dye"
+                        },
+                        {
+                            "item":  "minecraft:light_gray_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:winter_whitewash_standard_block",
+                   "count":  1
+               }
+}

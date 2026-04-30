@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "camowarfare:slat_armor_block",
+    "camowarfare:slat_armor_military_green_block",
+    "camowarfare:slat_armor_desert_sand_block",
+    "camowarfare:slat_armor_bluegray_block",
+    "camowarfare:slat_armor_night_black_block"
+  ]
+}

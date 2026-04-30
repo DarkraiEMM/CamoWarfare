@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:afrika_korps_large_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:afrika_korps_standard_block",
+                   "count":  1
+               }
+}

@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "create"
+                                }
+                            ],
+    "type":  "create:mixing",
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:paper"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:brown_dye"
+                        }
+                    ],
+    "results":  [
+                    {
+                        "id":  "camowarfare:spray_stencil_blotch",
+                        "count":  1
+                    }
+                ]
+}

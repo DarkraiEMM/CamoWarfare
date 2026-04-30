@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/snow_graywhite_digital_standard_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/snow_graywhite_digital/variant_1"
+                 }
+}

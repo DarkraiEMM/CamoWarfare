@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:ukrainian_yellow_green_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:ukrainian_yellow_green_large_block",
+                   "count":  1
+               }
+}

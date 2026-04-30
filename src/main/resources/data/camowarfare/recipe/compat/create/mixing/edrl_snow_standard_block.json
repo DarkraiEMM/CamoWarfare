@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "create"
+                                }
+                            ],
+    "type":  "create:mixing",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:urban_gray_splinter_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_blotch"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:white_dye"
+                        },
+                        {
+                            "item":  "minecraft:light_gray_dye"
+                        }
+                    ],
+    "results":  [
+                    {
+                        "id":  "camowarfare:edrl_snow_standard_block",
+                        "count":  1
+                    }
+                ]
+}

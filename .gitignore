@@ -34,7 +34,15 @@ bin/
 
 ### Minecraft Modding ###
 run/
+runs/
 !**/src/**/run/
 **/src/generated/**/.cache/
 repo/
 !**/src/**/repo/
+
+### Local release and working files ###
+release/
+tmp/
+.tmp_*/
+META-INF/
+preview/texture_audit/extract_*/

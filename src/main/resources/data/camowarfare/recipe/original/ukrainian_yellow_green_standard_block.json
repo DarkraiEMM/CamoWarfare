@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:solid_military_green_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_blotch"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:lime_dye"
+                        },
+                        {
+                            "item":  "minecraft:yellow_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:ukrainian_yellow_green_standard_block",
+                   "count":  1
+               }
+}

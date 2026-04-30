@@ -1,0 +1,6 @@
+{
+    "parent":  "minecraft:block/cube_all",
+    "textures":  {
+                     "all":  "camowarfare:block/ukrainian_yellow_green/variant_1"
+                 }
+}

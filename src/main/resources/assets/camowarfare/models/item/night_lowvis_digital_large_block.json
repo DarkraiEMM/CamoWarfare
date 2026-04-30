@@ -1,0 +1,6 @@
+{
+    "parent":  "minecraft:block/cube_all",
+    "textures":  {
+                     "all":  "camowarfare:block/night_lowvis_digital/variant_1"
+                 }
+}

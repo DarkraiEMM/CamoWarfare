@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "camowarfare:add_on_armor_plate_block",
+    "camowarfare:add_on_armor_plate_military_green_block",
+    "camowarfare:add_on_armor_plate_desert_sand_block",
+    "camowarfare:add_on_armor_plate_bluegray_block",
+    "camowarfare:add_on_armor_plate_night_black_block"
+  ]
+}

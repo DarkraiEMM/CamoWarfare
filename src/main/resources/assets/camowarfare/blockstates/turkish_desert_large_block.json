@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/turkish_desert_large_block_0"
+                                    }
+                      }
+                  ]
+}

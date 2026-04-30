@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "camowarfare:item/section_woodland_digital_title"
+  }
+}

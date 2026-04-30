@@ -1,0 +1,20 @@
+{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "building",
+    "pattern":  [
+                    "XI",
+                    "IX"
+                ],
+    "key":  {
+                "X":  {
+                          "tag":  "camowarfare:armor_plate_concretes"
+                      },
+                "I":  {
+                          "item":  "minecraft:iron_block"
+                      }
+            },
+    "result":  {
+                   "id":  "camowarfare:armor_plate_block",
+                   "count":  4
+               }
+}

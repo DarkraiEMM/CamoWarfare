@@ -1,0 +1,16 @@
+{
+    "render_type":  "minecraft:solid",
+    "ambientocclusion":  true,
+    "loader":  "camowarfare:connected_camo",
+    "parent":  "minecraft:block/block",
+    "textures":  {
+                     "east":  "camowarfare:block/matte_olive_panel/east_atlas",
+                     "up":  "camowarfare:block/matte_olive_panel/up_atlas",
+                     "particle":  "camowarfare:block/matte_olive_panel/particle",
+                     "down":  "camowarfare:block/matte_olive_panel/down_atlas",
+                     "north":  "camowarfare:block/matte_olive_panel/north_atlas",
+                     "south":  "camowarfare:block/matte_olive_panel/south_atlas",
+                     "atlas":  "camowarfare:block/matte_olive_panel/north_atlas",
+                     "west":  "camowarfare:block/matte_olive_panel/west_atlas"
+                 }
+}

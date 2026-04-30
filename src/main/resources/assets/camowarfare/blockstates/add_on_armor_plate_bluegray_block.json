@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "camowarfare:block/add_on_armor_plate_bluegray_block"
+    },
+    "facing=east": {
+      "model": "camowarfare:block/add_on_armor_plate_bluegray_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "camowarfare:block/add_on_armor_plate_bluegray_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "camowarfare:block/add_on_armor_plate_bluegray_block",
+      "y": 270
+    }
+  }
+}

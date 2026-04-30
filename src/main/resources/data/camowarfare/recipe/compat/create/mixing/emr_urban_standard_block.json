@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "create"
+                                }
+                            ],
+    "type":  "create:mixing",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:urban_gray_splinter_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_digital"
+                        },
+                        {
+                            "item":  "minecraft:redstone"
+                        },
+                        {
+                            "item":  "minecraft:gray_dye"
+                        },
+                        {
+                            "item":  "minecraft:black_dye"
+                        }
+                    ],
+    "results":  [
+                    {
+                        "id":  "camowarfare:emr_urban_standard_block",
+                        "count":  1
+                    }
+                ]
+}

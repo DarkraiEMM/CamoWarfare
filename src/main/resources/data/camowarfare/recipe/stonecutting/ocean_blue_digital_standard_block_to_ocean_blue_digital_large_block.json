@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:ocean_blue_digital_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:ocean_blue_digital_large_block",
+                   "count":  1
+               }
+}

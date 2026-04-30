@@ -1,0 +1,6 @@
+{
+    "parent":  "minecraft:block/cube_all",
+    "textures":  {
+                     "all":  "camowarfare:block/ocp_desert/variant_1"
+                 }
+}

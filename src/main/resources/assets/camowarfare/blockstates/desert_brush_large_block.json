@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/desert_brush_large_block_0"
+                                    }
+                      }
+                  ]
+}

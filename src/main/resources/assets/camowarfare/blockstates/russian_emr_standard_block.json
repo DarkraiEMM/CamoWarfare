@@ -1,0 +1,7 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "camowarfare:block/russian_emr_standard_block_0" }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "selector": "#camowarfare:simulated_physics_blocks",
+    "properties": {
+        "sable:mass": 1.0,
+        "sable:volume": 1.0
+    }
+}

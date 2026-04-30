@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:solid_military_green_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_blotch"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:gray_dye"
+                        },
+                        {
+                            "item":  "minecraft:green_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:edrl_mountain_standard_block",
+                   "count":  1
+               }
+}

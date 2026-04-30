@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:paper"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:iron_nugget"
+                        },
+                        {
+                            "item":  "minecraft:flint"
+                        },
+                        {
+                            "item":  "minecraft:green_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:spray_stencil_splinter",
+                   "count":  1
+               }
+}

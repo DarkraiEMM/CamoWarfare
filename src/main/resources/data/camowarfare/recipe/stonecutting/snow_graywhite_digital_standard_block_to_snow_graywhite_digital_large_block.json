@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:snow_graywhite_digital_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:snow_graywhite_digital_large_block",
+                   "count":  1
+               }
+}

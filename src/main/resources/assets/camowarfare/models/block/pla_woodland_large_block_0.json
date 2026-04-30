@@ -1,0 +1,14 @@
+{
+    "parent":  "minecraft:block/block",
+    "render_type":  "minecraft:cutout",
+    "loader":  "camowarfare:connected_camo",
+    "position_tiled":  true,
+    "position_tile_pixels":  32,
+    "textures":  {
+                     "atlas":  "camowarfare:block/pla_woodland/variant_0",
+                     "particle":  "camowarfare:block/pla_woodland/variant_1",
+                     "copycat_atlas":  "camowarfare:block/pla_woodland/variant_1",
+                     "edge":  "camowarfare:block/definition_sample/edge",
+                     "rivet":  "camowarfare:block/definition_sample/rivet"
+                 }
+}

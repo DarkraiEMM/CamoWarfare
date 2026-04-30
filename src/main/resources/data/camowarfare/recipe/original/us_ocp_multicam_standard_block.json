@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:us_carc_green383_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_multiterrain"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:brown_dye"
+                        },
+                        {
+                            "item":  "minecraft:lime_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:us_ocp_multicam_standard_block",
+                   "count":  1
+               }
+}

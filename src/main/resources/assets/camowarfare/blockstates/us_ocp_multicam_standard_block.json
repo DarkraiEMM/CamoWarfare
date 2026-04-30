@@ -1,0 +1,7 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "camowarfare:block/us_ocp_multicam_standard_block_0" }
+    }
+  ]
+}

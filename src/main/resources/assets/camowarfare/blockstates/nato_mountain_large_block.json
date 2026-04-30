@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/nato_mountain_large_block_0"
+                                    }
+                      }
+                  ]
+}

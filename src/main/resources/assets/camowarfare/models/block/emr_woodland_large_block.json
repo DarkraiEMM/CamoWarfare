@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/emr_woodland_large_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/emr_woodland/variant_1"
+                 }
+}

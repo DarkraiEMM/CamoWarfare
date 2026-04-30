@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "camowarfare:block/nato_tricolor_mountain/variant_1"
+  }
+}

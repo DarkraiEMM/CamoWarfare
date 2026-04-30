@@ -1,0 +1,7 @@
+{
+  "selector": "#camowarfare:slat_armor_blocks",
+  "properties": {
+    "sable:mass": 0.25,
+    "sable:volume": 1.0
+  }
+}

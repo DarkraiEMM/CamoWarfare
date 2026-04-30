@@ -1,0 +1,7 @@
+{
+  "parent": "camowarfare:block/us_ocp_multicam_large_block_0",
+  "render_type": "minecraft:solid",
+  "textures": {
+    "particle": "camowarfare:block/us_ocp_multicam/variant_1"
+  }
+}

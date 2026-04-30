@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/winter_whitewash_standard_block_0"
+                                    }
+                      }
+                  ]
+}

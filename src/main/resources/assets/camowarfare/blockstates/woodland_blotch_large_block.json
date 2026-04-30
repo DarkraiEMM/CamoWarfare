@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/woodland_blotch_large_block_0"
+                                    }
+                      }
+                  ]
+}

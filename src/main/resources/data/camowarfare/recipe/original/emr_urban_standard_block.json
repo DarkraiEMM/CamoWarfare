@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:urban_gray_splinter_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_digital"
+                        },
+                        {
+                            "item":  "minecraft:redstone"
+                        },
+                        {
+                            "item":  "minecraft:gray_dye"
+                        },
+                        {
+                            "item":  "minecraft:black_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:emr_urban_standard_block",
+                   "count":  1
+               }
+}

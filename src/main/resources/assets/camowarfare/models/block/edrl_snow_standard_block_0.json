@@ -1,0 +1,14 @@
+{
+    "parent":  "minecraft:block/block",
+    "render_type":  "minecraft:cutout",
+    "loader":  "camowarfare:connected_camo",
+    "position_tiled":  true,
+    "position_tile_pixels":  64,
+    "textures":  {
+                     "atlas":  "camowarfare:block/edrl_snow/variant_0",
+                     "particle":  "camowarfare:block/edrl_snow/variant_1",
+                     "copycat_atlas":  "camowarfare:block/edrl_snow/variant_1",
+                     "edge":  "camowarfare:block/definition_sample/edge",
+                     "rivet":  "camowarfare:block/definition_sample/rivet"
+                 }
+}

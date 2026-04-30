@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:nato_woodland_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:nato_woodland_large_block",
+                   "count":  1
+               }
+}

@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/night_lowvis_digital_large_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/night_lowvis_digital/variant_1"
+                 }
+}

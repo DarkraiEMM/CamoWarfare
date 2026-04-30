@@ -1,0 +1,32 @@
+{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "create"
+                                }
+                            ],
+    "type":  "create:mixing",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:solid_night_black_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_digital"
+                        },
+                        {
+                            "item":  "minecraft:redstone"
+                        },
+                        {
+                            "item":  "minecraft:black_dye"
+                        },
+                        {
+                            "item":  "minecraft:gray_dye"
+                        }
+                    ],
+    "results":  [
+                    {
+                        "id":  "camowarfare:night_lowvis_digital_standard_block",
+                        "count":  1
+                    }
+                ]
+}

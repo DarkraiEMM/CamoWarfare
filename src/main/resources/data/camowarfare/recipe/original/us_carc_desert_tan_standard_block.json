@@ -1,0 +1,22 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:armor_plate_block"
+                        },
+                        {
+                            "item":  "minecraft:yellow_dye"
+                        },
+                        {
+                            "item":  "minecraft:brown_dye"
+                        },
+                        {
+                            "item":  "minecraft:white_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:us_carc_desert_tan_standard_block",
+                   "count":  1
+               }
+}

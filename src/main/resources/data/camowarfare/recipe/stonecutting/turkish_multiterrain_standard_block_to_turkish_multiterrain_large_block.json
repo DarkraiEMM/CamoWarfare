@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:turkish_multiterrain_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:turkish_multiterrain_large_block",
+                   "count":  1
+               }
+}

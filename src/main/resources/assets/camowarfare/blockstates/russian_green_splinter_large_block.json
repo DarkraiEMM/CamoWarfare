@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/russian_green_splinter_large_block_0"
+                                    }
+                      }
+                  ]
+}

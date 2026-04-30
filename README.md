@@ -1,25 +1,60 @@
+# CamoWarfare
 
-Installation information
-=======
+CamoWarfare adds modular camouflage hull blocks, armor attachments, slat armor, vehicle hanging plates, and organized creative-tab sections for Minecraft vehicle builders.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+The mod focuses on military vehicle decoration and hull detailing. It includes camouflage families for woodland, mountain, desert, snow, night, naval, and urban builds, plus several attachment colors for extra armor detailing.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## Features
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+- Camouflage coating blocks in standard and large variants
+- Add-on armor plates, slat armor, and vehicle hanging plates
+- Grouped creative inventory sections for easier browsing
+- Multiplayer-safe NeoForge mod for Minecraft 1.21.1
+- Optional JEI integration to keep divider helper items out of ingredient listings
+- Localizations for English, Simplified Chinese, German, French, and Russian
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## Requirements
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+- Minecraft 1.21.1
+- NeoForge 21.1.227 or newer in the 1.21.1 line
+- Java 21
+
+## Installation
+
+1. Install NeoForge for Minecraft 1.21.1.
+2. Download the CamoWarfare jar for your Minecraft version.
+3. Place the jar in your `mods` folder.
+4. Launch the game.
+
+## Build From Source
+
+```powershell
+.\gradlew.bat build
+```
+
+The built jar is written to `build/libs/`.
+
+## Publishing Notes
+
+For Modrinth and CurseForge, use:
+
+- Name: CamoWarfare
+- Mod loader: NeoForge
+- Minecraft version: 1.21.1
+- Version: 1.3
+- Release type: Release
+- Required dependency: NeoForge
+- Optional dependency: JEI
+- License: All Rights Reserved
+
+Suggested short summary:
+
+> Modular camouflage hull blocks and armor attachments for Minecraft vehicle builders.
+
+Suggested description:
+
+> CamoWarfare expands the block palette for military and vehicle-focused builds with camouflage coating blocks, armor plates, slat armor, and hanging vehicle plates. It includes multiple terrain-themed camouflage families and organized creative-tab sections so builders can quickly find the pieces they need.
+
+## License
+
+All Rights Reserved.

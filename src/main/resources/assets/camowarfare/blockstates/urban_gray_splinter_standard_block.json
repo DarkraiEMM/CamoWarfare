@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/urban_gray_splinter_standard_block_0"
+                                    }
+                      }
+                  ]
+}

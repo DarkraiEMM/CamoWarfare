@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "camowarfare:item/section_wide_woodland_fill_5"
+  }
+}

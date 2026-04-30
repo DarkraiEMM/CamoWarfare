@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "camowarfare:block/afrika_korps_standard_block_0"
+      }
+    }
+  ]
+}

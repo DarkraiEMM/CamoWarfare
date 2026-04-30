@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/us_carc_green383_standard_block_0"
+                                    }
+                      }
+                  ]
+}

@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:us_ocp_multicam_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:us_ocp_multicam_large_block",
+                   "count":  1
+               }
+}

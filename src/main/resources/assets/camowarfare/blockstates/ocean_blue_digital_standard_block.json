@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/ocean_blue_digital_standard_block_0"
+                                    }
+                      }
+                  ]
+}

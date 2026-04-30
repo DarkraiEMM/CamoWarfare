@@ -1,0 +1,46 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "block/block",
+  "textures": {
+    "bar": "camowarfare:block/slat_armor_bar",
+    "particle": "camowarfare:block/slat_armor_bar"
+  },
+  "elements": [
+    {
+      "from": [15, 3.1, 12],
+      "to": [16, 3.55, 16],
+      "faces": {
+        "north": { "uv": [15, 3, 16, 4], "texture": "#bar" },
+        "south": { "uv": [15, 3, 16, 4], "texture": "#bar" },
+        "east": { "uv": [12, 3, 16, 4], "texture": "#bar" },
+        "west": { "uv": [12, 3, 16, 4], "texture": "#bar" },
+        "up": { "uv": [15, 12, 16, 16], "texture": "#bar" },
+        "down": { "uv": [15, 12, 16, 16], "texture": "#bar" }
+      }
+    },
+    {
+      "from": [15, 8.55, 12],
+      "to": [16, 9, 16],
+      "faces": {
+        "north": { "uv": [15, 8, 16, 9], "texture": "#bar" },
+        "south": { "uv": [15, 8, 16, 9], "texture": "#bar" },
+        "east": { "uv": [12, 8, 16, 9], "texture": "#bar" },
+        "west": { "uv": [12, 8, 16, 9], "texture": "#bar" },
+        "up": { "uv": [15, 12, 16, 16], "texture": "#bar" },
+        "down": { "uv": [15, 12, 16, 16], "texture": "#bar" }
+      }
+    },
+    {
+      "from": [15, 13.45, 12],
+      "to": [16, 13.9, 16],
+      "faces": {
+        "north": { "uv": [15, 13, 16, 14], "texture": "#bar" },
+        "south": { "uv": [15, 13, 16, 14], "texture": "#bar" },
+        "east": { "uv": [12, 13, 16, 14], "texture": "#bar" },
+        "west": { "uv": [12, 13, 16, 14], "texture": "#bar" },
+        "up": { "uv": [15, 12, 16, 16], "texture": "#bar" },
+        "down": { "uv": [15, 12, 16, 16], "texture": "#bar" }
+      }
+    }
+  ]
+}

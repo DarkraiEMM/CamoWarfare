@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/turkish_mountain_standard_block_0"
+                                    }
+                      }
+                  ]
+}

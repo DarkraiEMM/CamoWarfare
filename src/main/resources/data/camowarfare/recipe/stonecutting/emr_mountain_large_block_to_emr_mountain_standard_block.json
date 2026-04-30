@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:emr_mountain_large_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:emr_mountain_standard_block",
+                   "count":  1
+               }
+}

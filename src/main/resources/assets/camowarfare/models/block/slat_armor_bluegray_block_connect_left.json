@@ -1,0 +1,7 @@
+{
+  "parent": "camowarfare:block/slat_armor_connect_left_template",
+  "textures": {
+    "bar": "camowarfare:block/solid_bluegray/a",
+    "particle": "camowarfare:block/solid_bluegray/a"
+  }
+}

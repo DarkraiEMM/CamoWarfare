@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "camowarfare:item/section_deep_armor_green_fill_3"
+  }
+}

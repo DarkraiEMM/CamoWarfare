@@ -1,0 +1,25 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:us_carc_green383_standard_block"
+                        },
+                        {
+                            "item":  "camowarfare:spray_stencil_multiterrain"
+                        },
+                        {
+                            "item":  "minecraft:clay_ball"
+                        },
+                        {
+                            "item":  "minecraft:green_dye"
+                        },
+                        {
+                            "item":  "minecraft:brown_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:ocp_woodland_standard_block",
+                   "count":  1
+               }
+}

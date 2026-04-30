@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/woodland_blotch_standard_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/woodland_blotch/variant_1"
+                 }
+}

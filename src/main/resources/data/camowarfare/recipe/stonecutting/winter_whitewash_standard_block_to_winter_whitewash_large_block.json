@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:winter_whitewash_standard_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:winter_whitewash_large_block",
+                   "count":  1
+               }
+}

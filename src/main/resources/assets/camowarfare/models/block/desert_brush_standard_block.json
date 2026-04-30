@@ -1,0 +1,7 @@
+{
+    "parent":  "camowarfare:block/desert_brush_standard_block_0",
+    "render_type":  "minecraft:solid",
+    "textures":  {
+                     "particle":  "camowarfare:block/desert_brush/variant_1"
+                 }
+}

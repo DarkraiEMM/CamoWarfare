@@ -1,0 +1,19 @@
+{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "building",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:armor_plate_block"
+                        },
+                        {
+                            "item":  "minecraft:gray_dye"
+                        },
+                        {
+                            "item":  "minecraft:light_gray_dye"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:urban_gray_splinter_standard_block",
+                   "count":  1
+               }
+}

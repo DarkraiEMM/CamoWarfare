@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/ukrainian_yellow_green_standard_block_0"
+                                    }
+                      }
+                  ]
+}

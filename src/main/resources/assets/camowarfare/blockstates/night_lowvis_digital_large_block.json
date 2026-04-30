@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/night_lowvis_digital_large_block_0"
+                                    }
+                      }
+                  ]
+}

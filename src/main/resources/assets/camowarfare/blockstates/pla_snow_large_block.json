@@ -1,0 +1,9 @@
+{
+    "multipart":  [
+                      {
+                          "apply":  {
+                                        "model":  "camowarfare:block/pla_snow_large_block_0"
+                                    }
+                      }
+                  ]
+}

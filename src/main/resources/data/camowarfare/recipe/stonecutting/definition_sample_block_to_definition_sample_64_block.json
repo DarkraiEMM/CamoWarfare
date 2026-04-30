@@ -1,0 +1,10 @@
+{
+    "type":  "minecraft:stonecutting",
+    "ingredient":  {
+                       "item":  "camowarfare:definition_sample_block"
+                   },
+    "result":  {
+                   "id":  "camowarfare:definition_sample_64_block",
+                   "count":  1
+               }
+}
