@@ -26,10 +26,12 @@ public class ConnectedCamoBlock extends Block {
     private static final Map<Direction, BooleanProperty> PROPERTIES_BY_DIRECTION = createPropertiesByDirection();
 
     private final String connectionKey;
+    private final String connectionFamily;
 
     public ConnectedCamoBlock(String connectionKey, BlockBehaviour.Properties properties) {
         super(properties);
         this.connectionKey = connectionKey;
+        this.connectionFamily = normalizeConnectionFamily(connectionKey);
         registerDefaultConnectionState();
     }
 
@@ -73,7 +75,20 @@ public class ConnectedCamoBlock extends Block {
     }
 
     private boolean connectsTo(BlockState state) {
-        return state.getBlock() instanceof ConnectedCamoBlock other && other.connectionKey.equals(this.connectionKey);
+        return state.getBlock() instanceof ConnectedCamoBlock other && other.connectionFamily.equals(this.connectionFamily);
+    }
+
+    private static String normalizeConnectionFamily(String key) {
+        if (key.endsWith("_standard")) {
+            return key.substring(0, key.length() - "_standard".length());
+        }
+        if (key.endsWith("_large")) {
+            return key.substring(0, key.length() - "_large".length());
+        }
+        if (key.endsWith("_64")) {
+            return key.substring(0, key.length() - "_64".length());
+        }
+        return key;
     }
 
     private static Map<Direction, BooleanProperty> createPropertiesByDirection() {

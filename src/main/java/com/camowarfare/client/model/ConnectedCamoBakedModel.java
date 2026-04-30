@@ -471,8 +471,8 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
         return switch (face) {
             case UP, DOWN -> new Direction[] { Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST };
             case NORTH -> new Direction[] { Direction.UP, Direction.EAST, Direction.DOWN, Direction.WEST };
-            case SOUTH -> new Direction[] { Direction.UP, Direction.WEST, Direction.DOWN, Direction.EAST };
-            case EAST -> new Direction[] { Direction.UP, Direction.NORTH, Direction.DOWN, Direction.SOUTH };
+            case SOUTH -> new Direction[] { Direction.UP, Direction.EAST, Direction.DOWN, Direction.WEST };
+            case EAST -> new Direction[] { Direction.UP, Direction.SOUTH, Direction.DOWN, Direction.NORTH };
             case WEST -> new Direction[] { Direction.UP, Direction.SOUTH, Direction.DOWN, Direction.NORTH };
         };
     }
