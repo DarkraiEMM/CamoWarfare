@@ -47,13 +47,6 @@ For Modrinth and CurseForge, use:
 - Optional dependency: JEI
 - License: All Rights Reserved
 
-Suggested short summary:
-
-> Modular camouflage hull blocks and armor attachments for Minecraft vehicle builders.
-
-Suggested description:
-
-> CamoWarfare expands the block palette for military and vehicle-focused builds with camouflage coating blocks, armor plates, slat armor, and hanging vehicle plates. It includes multiple terrain-themed camouflage families and organized creative-tab sections so builders can quickly find the pieces they need.
 
 ## License
 
