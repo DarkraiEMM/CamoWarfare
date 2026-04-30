@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import com.camowarfare.ConnectedCamoBlock;
+import com.camowarfare.ConnectedCamoModelData;
 import com.camowarfare.ConnectedPreviewPanelBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -39,9 +41,6 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
     private static final float EDGE_WIDTH = 0.35F;
     private static final float RIVET_INSET = 0.75F;
     private static final float RIVET_SIZE = 1.55F;
-    public static final ModelProperty<Boolean> COPYCAT_ATLAS_PROPERTY = new ModelProperty<>();
-    public static final ModelProperty<Integer> POSITION_TILE_PROPERTY = new ModelProperty<>();
-
     private final Map<Direction.Axis, Map<Direction, List<BakedQuad>[]>> cachedFaceQuads;
     private final Map<Direction.Axis, Map<Direction, List<BakedQuad>[]>> cachedCopycatFaceQuads;
     private final Map<Direction.Axis, Map<Direction, Map<Integer, List<BakedQuad>>>> cachedPositionTiledFaceQuads;
@@ -95,31 +94,35 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
             ? state.getValue(ConnectedPreviewPanelBlock.AXIS)
             : Direction.Axis.Y;
         if (positionTiled && !useCopycatAtlas(extraData)) {
-            int mask = maskForFace(state, side, axis);
+            int mask = maskForFace(state, side, axis, extraData);
             int packedPosition = packedPosition(extraData);
             int key = positionFaceKey(side, packedPosition, mask, positionTileCount);
             return cachedPositionTiledFaceQuads.get(axis).get(side).getOrDefault(key, List.of());
         }
 
         Map<Direction.Axis, Map<Direction, List<BakedQuad>[]>> cache = useCopycatAtlas(extraData) ? cachedCopycatFaceQuads : cachedFaceQuads;
-        return cache.get(axis).get(side)[maskForFace(state, side, axis)];
+        return cache.get(axis).get(side)[maskForFace(state, side, axis, extraData)];
     }
 
     @Override
     public ModelData getModelData(BlockAndTintGetter level, BlockPos pos, BlockState state, ModelData modelData) {
         ModelData inherited = originalModel.getModelData(level, pos, state, modelData);
         boolean copycatScaled = isCopycatScaledGetter(level);
-        if (!copycatScaled && !positionTiled) {
+        boolean connectedCamo = state.getBlock() instanceof ConnectedCamoBlock;
+        if (!copycatScaled && !positionTiled && !connectedCamo) {
             return inherited;
         }
 
         Builder builder = ModelData.builder();
         copyEntries(inherited, builder);
         if (copycatScaled) {
-            builder.with(COPYCAT_ATLAS_PROPERTY, true);
+            builder.with(ConnectedCamoModelData.COPYCAT_ATLAS_PROPERTY, true);
         }
         if (positionTiled) {
-            builder.with(POSITION_TILE_PROPERTY, packPosition(pos, positionTileCount));
+            builder.with(ConnectedCamoModelData.POSITION_TILE_PROPERTY, packPosition(pos, positionTileCount));
+        }
+        if (connectedCamo) {
+            builder.with(ConnectedCamoModelData.CONNECTIONS_PROPERTY, liveConnectionBits(level, pos, state));
         }
         return builder.build();
     }
@@ -262,38 +265,6 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
     ) {
         List<BakedQuad> quads = new ArrayList<>(8);
         quads.add(createQuad(direction, camoSprite, positionTileUv(tileX, tileY, positionTileUvSize), modelState));
-        if (edgeSprite != null) {
-            if ((mask & 1) == 0) {
-                quads.add(createQuad(direction, edgeSprite, FULL_FACE_UV, edgeElementFor(direction, FaceBand.TOP), modelState));
-            }
-            if ((mask & 2) == 0) {
-                quads.add(createQuad(direction, edgeSprite, FULL_FACE_UV, edgeElementFor(direction, FaceBand.RIGHT), modelState));
-            }
-            if ((mask & 4) == 0) {
-                quads.add(createQuad(direction, edgeSprite, FULL_FACE_UV, edgeElementFor(direction, FaceBand.BOTTOM), modelState));
-            }
-            if ((mask & 8) == 0) {
-                quads.add(createQuad(direction, edgeSprite, FULL_FACE_UV, edgeElementFor(direction, FaceBand.LEFT), modelState));
-            }
-        }
-        if (rivetSprite != null) {
-            boolean topOpen = (mask & 1) == 0;
-            boolean rightOpen = (mask & 2) == 0;
-            boolean bottomOpen = (mask & 4) == 0;
-            boolean leftOpen = (mask & 8) == 0;
-            if (topOpen && leftOpen) {
-                quads.add(createQuad(direction, rivetSprite, FULL_FACE_UV, rivetElementFor(direction, FaceCorner.TOP_LEFT), modelState));
-            }
-            if (topOpen && rightOpen) {
-                quads.add(createQuad(direction, rivetSprite, FULL_FACE_UV, rivetElementFor(direction, FaceCorner.TOP_RIGHT), modelState));
-            }
-            if (bottomOpen && leftOpen) {
-                quads.add(createQuad(direction, rivetSprite, FULL_FACE_UV, rivetElementFor(direction, FaceCorner.BOTTOM_LEFT), modelState));
-            }
-            if (bottomOpen && rightOpen) {
-                quads.add(createQuad(direction, rivetSprite, FULL_FACE_UV, rivetElementFor(direction, FaceCorner.BOTTOM_RIGHT), modelState));
-            }
-        }
         return List.copyOf(quads);
     }
 
@@ -341,9 +312,9 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
     }
 
     private static int positionFaceKey(Direction side, int packedPosition, int mask, int positionTileCount) {
-        int x = packedPosition & 15;
+        int x = Math.floorMod(packedPosition & 15, positionTileCount);
         int y = (packedPosition >> 4) & 15;
-        int z = (packedPosition >> 8) & 15;
+        int z = Math.floorMod((packedPosition >> 8) & 15, positionTileCount);
         int vertical = Math.floorMod(-y, positionTileCount);
         return switch (side) {
             case UP, DOWN -> positionKey(x, z, mask);
@@ -363,7 +334,7 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
     }
 
     private static int packedPosition(ModelData data) {
-        Integer value = data.get(POSITION_TILE_PROPERTY);
+        Integer value = data.get(ConnectedCamoModelData.POSITION_TILE_PROPERTY);
         return value == null ? 0 : value;
     }
 
@@ -445,26 +416,46 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
         };
     }
 
-    private static int maskForFace(BlockState state, Direction worldFace, Direction.Axis axis) {
+    private static int maskForFace(BlockState state, Direction worldFace, Direction.Axis axis, ModelData data) {
         Direction localFace = worldToLocal(worldFace, axis);
         Direction[] localEdges = edgesForFace(localFace);
         return mask(
-            isConnected(state, localToWorld(localEdges[0], axis)),
-            isConnected(state, localToWorld(localEdges[1], axis)),
-            isConnected(state, localToWorld(localEdges[2], axis)),
-            isConnected(state, localToWorld(localEdges[3], axis))
+            isConnected(state, localToWorld(localEdges[0], axis), data),
+            isConnected(state, localToWorld(localEdges[1], axis), data),
+            isConnected(state, localToWorld(localEdges[2], axis), data),
+            isConnected(state, localToWorld(localEdges[3], axis), data)
         );
     }
 
-    private static boolean isConnected(BlockState state, Direction worldDirection) {
+    private static boolean isConnected(BlockState state, Direction worldDirection, ModelData data) {
+        Integer liveConnections = data.get(ConnectedCamoModelData.CONNECTIONS_PROPERTY);
+        if (liveConnections != null) {
+            return (liveConnections & ConnectedCamoModelData.connectionBit(worldDirection)) != 0;
+        }
         return switch (worldDirection) {
-            case NORTH -> state.getValue(com.camowarfare.ConnectedCamoBlock.NORTH);
-            case SOUTH -> state.getValue(com.camowarfare.ConnectedCamoBlock.SOUTH);
-            case EAST -> state.getValue(com.camowarfare.ConnectedCamoBlock.EAST);
-            case WEST -> state.getValue(com.camowarfare.ConnectedCamoBlock.WEST);
-            case UP -> state.getValue(com.camowarfare.ConnectedCamoBlock.UP);
-            case DOWN -> state.getValue(com.camowarfare.ConnectedCamoBlock.DOWN);
+            case NORTH -> state.getValue(ConnectedCamoBlock.NORTH);
+            case SOUTH -> state.getValue(ConnectedCamoBlock.SOUTH);
+            case EAST -> state.getValue(ConnectedCamoBlock.EAST);
+            case WEST -> state.getValue(ConnectedCamoBlock.WEST);
+            case UP -> state.getValue(ConnectedCamoBlock.UP);
+            case DOWN -> state.getValue(ConnectedCamoBlock.DOWN);
         };
+    }
+
+    private static int liveConnectionBits(BlockAndTintGetter level, BlockPos pos, BlockState state) {
+        if (!(state.getBlock() instanceof ConnectedCamoBlock block)) {
+            return 0;
+        }
+
+        int bits = 0;
+        for (Direction direction : Direction.values()) {
+            BlockState neighborState = level.getBlockState(pos.relative(direction));
+            if (neighborState.getBlock() instanceof ConnectedCamoBlock neighbor
+                    && neighbor.connectionFamily().equals(block.connectionFamily())) {
+                bits |= ConnectedCamoModelData.connectionBit(direction);
+            }
+        }
+        return bits;
     }
 
     private static Direction[] edgesForFace(Direction face) {
@@ -526,7 +517,7 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
     }
 
     private static boolean useCopycatAtlas(ModelData data) {
-        Boolean value = data.get(COPYCAT_ATLAS_PROPERTY);
+        Boolean value = data.get(ConnectedCamoModelData.COPYCAT_ATLAS_PROPERTY);
         return Boolean.TRUE.equals(value);
     }
 

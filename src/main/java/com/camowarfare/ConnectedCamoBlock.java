@@ -9,13 +9,15 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
-public class ConnectedCamoBlock extends Block {
+public class ConnectedCamoBlock extends Block implements EntityBlock {
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
     public static final BooleanProperty SOUTH = BlockStateProperties.SOUTH;
     public static final BooleanProperty EAST = BlockStateProperties.EAST;
@@ -76,6 +78,15 @@ public class ConnectedCamoBlock extends Block {
 
     private boolean connectsTo(BlockState state) {
         return state.getBlock() instanceof ConnectedCamoBlock other && other.connectionFamily.equals(this.connectionFamily);
+    }
+
+    public String connectionFamily() {
+        return connectionFamily;
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new ConnectedCamoBlockEntity(pos, state);
     }
 
     private static String normalizeConnectionFamily(String key) {

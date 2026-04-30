@@ -72,6 +72,13 @@ public final class CamoWarfare {
     private static final List<ResetCamoDefinition> RESET_CAMOS = createResetCamos();
     private static final Map<String, TerrainCamoBlocks> RESET_CAMO_BLOCKS = registerResetCamos();
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ConnectedCamoBlockEntity>> CONNECTED_CAMO_BLOCK_ENTITY =
+        BLOCK_ENTITY_TYPES.register("connected_camo", () -> {
+            List<Block> blocks = new ArrayList<>();
+            addConnectedCamoBlocks(blocks);
+            return BlockEntityType.Builder.of(ConnectedCamoBlockEntity::new, blocks.toArray(Block[]::new)).build(null);
+        });
+
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VehicleHangingPlateBlockEntity>> VEHICLE_HANGING_PLATE_BLOCK_ENTITY =
         BLOCK_ENTITY_TYPES.register("vehicle_hanging_plate", () -> {
             List<Block> blocks = new ArrayList<>();
@@ -243,6 +250,38 @@ public final class CamoWarfare {
             TAB_ENTRIES.add(SPRAY_STENCIL_ITEMS.get(definition.id()));
         }
         TAB_ENTRIES.add(SECTION_SPACERS.get(CreativeSection.STENCILS).get(0));
+    }
+
+    private static void addConnectedCamoBlocks(List<Block> blocks) {
+        addBlock(blocks, DEFINITION_SAMPLE);
+        addBlock(blocks, DEFINITION_SAMPLE_64);
+        addBlock(blocks, NATO_TRICOLOR_MOUNTAIN_STANDARD);
+        addBlock(blocks, NATO_TRICOLOR_MOUNTAIN_LARGE);
+        addBlock(blocks, TURKISH_MULTITERRAIN_STANDARD);
+        addBlock(blocks, TURKISH_MULTITERRAIN_LARGE);
+        addBlock(blocks, EDRL_GREEN_STANDARD);
+        addBlock(blocks, EDRL_GREEN_LARGE);
+        addBlock(blocks, RUSSIAN_EMR_STANDARD);
+        addBlock(blocks, RUSSIAN_EMR_LARGE);
+        addBlock(blocks, US_OCP_MULTICAM_STANDARD);
+        addBlock(blocks, US_OCP_MULTICAM_LARGE);
+        for (TerrainCamoBlocks camoBlocks : TERRAIN_CAMO_BLOCKS.values()) {
+            addCamoPair(blocks, camoBlocks);
+        }
+        for (TerrainCamoBlocks camoBlocks : RESET_CAMO_BLOCKS.values()) {
+            addCamoPair(blocks, camoBlocks);
+        }
+    }
+
+    private static void addCamoPair(List<Block> blocks, TerrainCamoBlocks camoBlocks) {
+        addBlock(blocks, camoBlocks.standard());
+        if (camoBlocks.large() != null) {
+            addBlock(blocks, camoBlocks.large());
+        }
+    }
+
+    private static void addBlock(List<Block> blocks, DeferredBlock<Block> block) {
+        blocks.add(block.get());
     }
 
     @SafeVarargs
