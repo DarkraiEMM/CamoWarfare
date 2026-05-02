@@ -1,11 +1,12 @@
 package com.camowarfare.client.model;
 
 import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 import java.util.EnumMap;
 import java.util.Map;
 import net.minecraft.client.renderer.block.model.ItemOverrides;
-import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
@@ -39,6 +40,7 @@ public final class ConnectedCamoGeometry implements IUnbakedGeometry<ConnectedCa
         ModelState composedState = UnbakedGeometryHelper.composeRootTransformIntoModelState(modelState, context.getRootTransform());
         Map<Direction, TextureAtlasSprite> faceSprites = loadFaceSprites(context, spriteGetter);
         TextureAtlasSprite copycatAtlasSprite = loadOptionalSprite(context, spriteGetter, "copycat_atlas");
+        List<TextureAtlasSprite> copycatTileSprites = loadOptionalSpriteSequence(context, spriteGetter, "copycat_atlas_");
         TextureAtlasSprite edgeSprite = loadOptionalSprite(context, spriteGetter, "edge");
         TextureAtlasSprite rivetSprite = loadOptionalSprite(context, spriteGetter, "rivet");
         Map<Direction, TextureAtlasSprite[]> splitFaceSprites = emptySplitFaceSprites();
@@ -70,6 +72,7 @@ public final class ConnectedCamoGeometry implements IUnbakedGeometry<ConnectedCa
             baseModel,
             faceSprites,
             copycatAtlasSprite,
+            copycatTileSprites,
             edgeSprite,
             rivetSprite,
             splitFaceSprites,
@@ -113,8 +116,23 @@ public final class ConnectedCamoGeometry implements IUnbakedGeometry<ConnectedCa
             return null;
         }
 
-        TextureAtlasSprite sprite = spriteGetter.apply(context.getMaterial(materialName));
-        return sprite.contents().name().equals(MissingTextureAtlasSprite.getLocation()) ? null : sprite;
+        return spriteGetter.apply(context.getMaterial(materialName));
+    }
+
+    private static List<TextureAtlasSprite> loadOptionalSpriteSequence(
+        IGeometryBakingContext context,
+        Function<Material, TextureAtlasSprite> spriteGetter,
+        String materialPrefix
+    ) {
+        List<TextureAtlasSprite> sprites = new ArrayList<>();
+        for (int i = 0; i < 256; i++) {
+            String materialName = materialPrefix + i;
+            if (!context.hasMaterial(materialName)) {
+                break;
+            }
+            sprites.add(spriteGetter.apply(context.getMaterial(materialName)));
+        }
+        return List.copyOf(sprites);
     }
 
     private static String materialName(Direction direction) {

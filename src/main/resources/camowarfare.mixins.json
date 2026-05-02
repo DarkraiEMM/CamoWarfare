@@ -1,10 +1,27 @@
 {
-  "required": true,
+  "required": false,
   "package": "com.camowarfare.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractContainerScreenAccessor",
     "AbstractContainerScreenMixin",
+    "CopycatBeamModelCoreMixin",
+    "CopycatByteModelCoreMixin",
+    "CopycatCornerSliceModelCoreMixin",
+    "CopycatFenceModelCoreMixin",
+    "CopycatHalfLayerModelCoreMixin",
+    "CopycatHalfPanelModelCoreMixin",
+    "CopycatModelNeoForgeMixin",
+    "CopycatMultiBoardModelCoreMixin",
+    "CopycatMultiByteModelCoreMixin",
+    "CopycatMultiBytePanelModelCoreMixin",
+    "CopycatMultiHalfLayerModelCoreMixin",
+    "CopycatSlabModelCoreMixin",
+    "CopycatStackedMultiHalfLayerModelCoreMixin",
+    "CopycatStairsModelCoreMixin",
+    "CopycatVerticalMultiHalfLayerModelCoreMixin",
+    "CopycatVerticalStairsModelCoreMixin",
+    "CopycatVerticalStepModelCoreMixin",
     "CreativeModeInventoryScreenMixin"
   ],
   "injectors": {

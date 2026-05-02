@@ -34,6 +34,16 @@ The mod focuses on military vehicle decoration and hull detailing. It includes c
 
 The built jar is written to `build/libs/`.
 
+## Changelog
+
+### 1.3.4
+
+- Added Copycats+ camouflage tile support using pre-sliced atlas tiles.
+- Fixed six-face camouflage sampling so standard blocks and Copycats parts connect across all world directions.
+- Fixed disappearing camouflage faces in taller builds by preserving full block positions in model data.
+- Updated generated camouflage model resources for copycat atlas tile references.
+- Kept ordinary camouflage blocks and Copycats camouflage parts on the same coordinate rule for mixed builds.
+
 ## Publishing Notes
 
 For Modrinth and CurseForge, use:
@@ -41,7 +51,7 @@ For Modrinth and CurseForge, use:
 - Name: CamoWarfare
 - Mod loader: NeoForge
 - Minecraft version: 1.21.1
-- Version: 1.3.2
+- Version: 1.3.4
 - Release type: Release
 - Required dependency: NeoForge
 - Optional dependency: JEI

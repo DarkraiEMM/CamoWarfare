@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "camowarfare:vehicle_hanging_plate_block",
+    "camowarfare:vehicle_hanging_plate_military_green_block",
+    "camowarfare:vehicle_hanging_plate_desert_sand_block",
+    "camowarfare:vehicle_hanging_plate_bluegray_block",
+    "camowarfare:vehicle_hanging_plate_night_black_block"
+  ]
+}

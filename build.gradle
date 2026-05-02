@@ -107,6 +107,24 @@ dependencies {
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
 
+    // Optional Copycats+ API/classes for client-side compatibility mixins during local builds.
+    def localCopycatsJar = file("G:/.minecraft/versions/迷彩战车测试/mods/[机械动力：伪装方块+] copycats-3.0.4+mc.1.21.1-neoforge.jar")
+    if (localCopycatsJar.exists()) {
+        compileOnly files(localCopycatsJar)
+    }
+    def localCreateJar = file("G:/.minecraft/versions/迷彩战车测试/mods/[机械动力] create-1.21.1-6.0.10.jar")
+    if (localCreateJar.exists()) {
+        compileOnly files(localCreateJar)
+    }
+    def localCopycatsJarUtf = file("G:/.minecraft/versions/\u8ff7\u5f69\u6218\u8f66\u6d4b\u8bd5/mods/[\u673a\u68b0\u52a8\u529b\uff1a\u4f2a\u88c5\u65b9\u5757+] copycats-3.0.4+mc.1.21.1-neoforge.jar")
+    if (localCopycatsJarUtf.exists()) {
+        compileOnly files(localCopycatsJarUtf)
+    }
+    def localCreateJarUtf = file("G:/.minecraft/versions/\u8ff7\u5f69\u6218\u8f66\u6d4b\u8bd5/mods/[\u673a\u68b0\u52a8\u529b] create-1.21.1-6.0.10.jar")
+    if (localCreateJarUtf.exists()) {
+        compileOnly files(localCreateJarUtf)
+    }
+
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
