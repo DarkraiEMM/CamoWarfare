@@ -1,5 +1,15 @@
 # CamoWarfare Changelog
 
+## 1.4.4
+
+### English
+
+- Reduced the utility decal distress pattern from fine speckling to larger worn patches so medical, radar, ammunition, and fuel markings stay readable in-world and in hand.
+
+### 中文
+
+- 调整功能标识水贴的旧化效果，从细碎噪点改为较大的磨损斑块，让医疗、雷达、弹药、燃油标识在世界中和手持时更容易识别。
+
 ## 1.4.3
 
 ### English
