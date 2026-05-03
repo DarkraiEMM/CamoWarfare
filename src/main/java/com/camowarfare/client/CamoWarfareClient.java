@@ -20,6 +20,7 @@ public final class CamoWarfareClient {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(CamoWarfare.CONNECTED_CAMO_BLOCK_ENTITY.get(), ConnectedCamoDecalRenderer::new);
         event.registerBlockEntityRenderer(CamoWarfare.VEHICLE_HANGING_PLATE_BLOCK_ENTITY.get(), VehicleHangingPlateRenderer::new);
     }
 }

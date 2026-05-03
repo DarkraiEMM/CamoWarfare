@@ -57,6 +57,7 @@ public final class CamoWarfare {
     public static final DeferredBlock<Block> ADD_ON_ARMOR_PLATE = registerCustomUtilityBlock("add_on_armor_plate_block", () -> new AddOnArmorPlateBlock(addOnArmorPlateProperties(MapColor.METAL)));
     public static final DeferredBlock<Block> SLAT_ARMOR = registerCustomUtilityBlock("slat_armor_block", () -> new SlatArmorBlock(slatArmorProperties(MapColor.METAL)));
     public static final DeferredBlock<Block> VEHICLE_HANGING_PLATE = registerCustomUtilityBlock("vehicle_hanging_plate_block", () -> new VehicleHangingPlateBlock(vehicleHangingPlateProperties(MapColor.METAL)));
+    public static final DeferredBlock<Block> SUSPICIOUS_ROAST_CHICKEN = registerCustomUtilityBlock("suspicious_roast_chicken_block", () -> new SuspiciousRoastChickenBlock(suspiciousRoastChickenProperties()));
 
     private static final Map<AttachmentColor, DeferredBlock<Block>> COLORED_ADD_ON_ARMOR_BLOCKS = new EnumMap<>(AttachmentColor.class);
     private static final Map<AttachmentColor, DeferredBlock<Block>> COLORED_SLAT_ARMOR_BLOCKS = new EnumMap<>(AttachmentColor.class);
@@ -67,6 +68,8 @@ public final class CamoWarfare {
     private static CreativeSection activeSection = CreativeSection.ATTACHMENTS;
     private static final List<SprayStencilDefinition> SPRAY_STENCILS = createSprayStencils();
     private static final Map<String, DeferredItem<Item>> SPRAY_STENCIL_ITEMS = registerSprayStencils();
+    private static final List<DecalDefinition> DECALS = createDecals();
+    private static final Map<String, DeferredItem<Item>> DECAL_ITEMS = registerDecals();
     private static final List<TerrainCamoDefinition> TERRAIN_CAMOS = createTerrainCamos();
     private static final Map<String, TerrainCamoBlocks> TERRAIN_CAMO_BLOCKS = registerTerrainCamos();
     private static final List<ResetCamoDefinition> RESET_CAMOS = createResetCamos();
@@ -88,6 +91,11 @@ public final class CamoWarfare {
             }
             return BlockEntityType.Builder.of(VehicleHangingPlateBlockEntity::new, blocks.toArray(Block[]::new)).build(null);
         });
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SuspiciousRoastChickenBlockEntity>> SUSPICIOUS_ROAST_CHICKEN_BLOCK_ENTITY =
+        BLOCK_ENTITY_TYPES.register("suspicious_roast_chicken", () ->
+            BlockEntityType.Builder.of(SuspiciousRoastChickenBlockEntity::new, SUSPICIOUS_ROAST_CHICKEN.get()).build(null)
+        );
 
     static {
         for (CreativeSection section : CreativeSection.values()) {
@@ -124,6 +132,7 @@ public final class CamoWarfare {
         }
         addAttachmentSection();
         addStencilSection();
+        addDecalSection();
 
         addResetSection(CreativeSection.WOODLAND);
         addBasicBlocks(TURKISH_MULTITERRAIN_STANDARD, TURKISH_MULTITERRAIN_LARGE);
@@ -225,6 +234,17 @@ public final class CamoWarfare {
         return Map.copyOf(items);
     }
 
+    private static Map<String, DeferredItem<Item>> registerDecals() {
+        Map<String, DeferredItem<Item>> items = new LinkedHashMap<>();
+        for (DecalDefinition definition : DECALS) {
+            items.put(definition.id(), ITEMS.registerItem(
+                definition.itemId(),
+                properties -> new CamoDecalItem(definition.id(), properties)
+            ));
+        }
+        return Map.copyOf(items);
+    }
+
     private static void addSectionDivider(CreativeSection section) {
         List<DeferredItem<Item>> dividerItems = SECTION_DIVIDER_ITEMS.get(section);
         TAB_ENTRIES.addAll(dividerItems);
@@ -237,6 +257,7 @@ public final class CamoWarfare {
         TAB_ENTRIES.add(ADD_ON_ARMOR_PLATE);
         TAB_ENTRIES.add(SLAT_ARMOR);
         TAB_ENTRIES.add(VEHICLE_HANGING_PLATE);
+        TAB_ENTRIES.add(SUSPICIOUS_ROAST_CHICKEN);
         for (AttachmentColor color : AttachmentColor.values()) {
             TAB_ENTRIES.add(COLORED_ADD_ON_ARMOR_BLOCKS.get(color));
             TAB_ENTRIES.add(COLORED_SLAT_ARMOR_BLOCKS.get(color));
@@ -250,6 +271,14 @@ public final class CamoWarfare {
             TAB_ENTRIES.add(SPRAY_STENCIL_ITEMS.get(definition.id()));
         }
         TAB_ENTRIES.add(SECTION_SPACERS.get(CreativeSection.STENCILS).get(0));
+    }
+
+    private static void addDecalSection() {
+        beginSection(CreativeSection.DECALS);
+        for (DecalDefinition definition : DECALS) {
+            TAB_ENTRIES.add(DECAL_ITEMS.get(definition.id()));
+        }
+        alignToNextRow(CreativeSection.DECALS);
     }
 
     private static void addConnectedCamoBlocks(List<Block> blocks) {
@@ -345,6 +374,27 @@ public final class CamoWarfare {
         );
     }
 
+    private static List<DecalDefinition> createDecals() {
+        List<DecalDefinition> decals = new ArrayList<>();
+        decals.add(new DecalDefinition("mark_red_star"));
+        decals.add(new DecalDefinition("mark_red_star_2x2"));
+        decals.add(new DecalDefinition("mark_white_star"));
+        decals.add(new DecalDefinition("mark_white_star_2x2"));
+        decals.add(new DecalDefinition("mark_black_star"));
+        decals.add(new DecalDefinition("mark_chevron_white"));
+        decals.add(new DecalDefinition("mark_arrow_white"));
+        decals.add(new DecalDefinition("mark_warning_triangle_red"));
+        decals.add(new DecalDefinition("mark_warning_stripes"));
+        decals.add(new DecalDefinition("mark_identification_bar_white"));
+        decals.add(new DecalDefinition("mark_lowvis_bars"));
+        for (String color : List.of("white", "black")) {
+            for (int digit = 0; digit <= 9; digit++) {
+                decals.add(new DecalDefinition("number_" + color + "_" + digit));
+            }
+        }
+        return List.copyOf(decals);
+    }
+
     private static List<ResetCamoDefinition> createResetCamos() {
         return List.of(
             new ResetCamoDefinition("woodland_blotch", CreativeSection.WOODLAND, true),
@@ -412,12 +462,24 @@ public final class CamoWarfare {
             .noOcclusion();
     }
 
+    private static BlockBehaviour.Properties suspiciousRoastChickenProperties() {
+        return BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_ORANGE)
+            .strength(0.8F, 4.0F)
+            .noOcclusion();
+    }
+
     private record TerrainCamoDefinition(String id, CreativeSection section) {}
     private record TerrainCamoBlocks(DeferredBlock<Block> standard, DeferredBlock<Block> large) {}
     private record ResetCamoDefinition(String id, CreativeSection section, boolean hasLarge) {}
     private record SprayStencilDefinition(String id) {
         private String itemId() {
             return "spray_stencil_" + id;
+        }
+    }
+    private record DecalDefinition(String id) {
+        private String itemId() {
+            return "decal_" + id;
         }
     }
 

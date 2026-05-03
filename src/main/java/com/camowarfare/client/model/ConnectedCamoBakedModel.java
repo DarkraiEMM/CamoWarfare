@@ -104,12 +104,12 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
         boolean copycatAtlas = useCopycatAtlas(extraData);
         if (copycatAtlas && copycatTileCount > 0) {
             int mask = maskForFace(state, side, axis, extraData);
-            int key = positionFaceKey(side, extraData, mask, copycatTileCount);
+            int key = positionFaceKey(side, axis, extraData, mask, copycatTileCount);
             return cachedCopycatPositionTiledFaceQuads.get(axis).get(side).getOrDefault(key, List.of());
         }
         if (positionTiled) {
             int mask = maskForFace(state, side, axis, extraData);
-            int key = positionFaceKey(side, extraData, mask, positionTileCount);
+            int key = positionFaceKey(side, axis, extraData, mask, positionTileCount);
             return cachedPositionTiledFaceQuads.get(axis).get(side).getOrDefault(key, List.of());
         }
 
@@ -188,7 +188,8 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
                 for (int tileX = 0; tileX < copycatTileCount; tileX++) {
                     for (int tileY = 0; tileY < copycatTileCount; tileY++) {
                         TextureAtlasSprite sprite = copycatTileSprites.get(tileY * copycatTileCount + tileX);
-                        float[] uv = fullFaceUv(worldFace);
+                        Direction localFace = worldToLocal(worldFace, axis);
+                        float[] uv = fullFaceUv(localFace);
                         for (int mask = 0; mask < 16; mask++) {
                             quadsByTileAndMask.put(
                                 positionKey(tileX, tileY, mask),
@@ -247,7 +248,7 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
                         for (int mask = 0; mask < 16; mask++) {
                             quadsByTileAndMask.put(
                                 positionKey(tileX, tileY, mask),
-                                createPositionTiledFaceQuads(worldFace, camoSprite, edgeSprite, rivetSprite, tileX, tileY, mask, positionTileUvSize, modelState)
+                                createPositionTiledFaceQuads(worldFace, localFace, camoSprite, edgeSprite, rivetSprite, tileX, tileY, mask, positionTileUvSize, modelState)
                             );
                         }
                     }
@@ -282,7 +283,8 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
     }
 
     private static List<BakedQuad> createPositionTiledFaceQuads(
-        Direction direction,
+        Direction worldFace,
+        Direction localFace,
         TextureAtlasSprite camoSprite,
         @Nullable TextureAtlasSprite edgeSprite,
         @Nullable TextureAtlasSprite rivetSprite,
@@ -293,7 +295,7 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
         ModelState modelState
     ) {
         List<BakedQuad> quads = new ArrayList<>(8);
-        quads.add(createQuad(direction, camoSprite, positionTileUv(direction, tileX, tileY, positionTileUvSize), modelState));
+        quads.add(createQuad(worldFace, camoSprite, positionTileUv(localFace, tileX, tileY, positionTileUvSize), modelState));
         return List.copyOf(quads);
     }
 
@@ -318,7 +320,7 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
         };
     }
 
-    private static int positionFaceKey(Direction side, ModelData data, int mask, int positionTileCount) {
+    private static int positionFaceKey(Direction side, Direction.Axis axis, ModelData data, int mask, int positionTileCount) {
         BlockPos pos = data.get(ConnectedCamoModelData.POSITION_PROPERTY);
         int x;
         int y;
@@ -333,11 +335,27 @@ public final class ConnectedCamoBakedModel extends BakedModelWrapper<BakedModel>
             y = Math.floorMod((packedPosition >> 4) & 15, positionTileCount);
             z = Math.floorMod((packedPosition >> 8) & 15, positionTileCount);
         }
-        return switch (side) {
-            case UP, DOWN -> positionKey(x, z, mask);
-            case NORTH, SOUTH -> positionKey(x, y, mask);
-            case EAST, WEST -> positionKey(z, y, mask);
+        Direction localFace = worldToLocal(side, axis);
+        int localX = coordinateForLocalAxis(Direction.Axis.X, axis, x, y, z, positionTileCount);
+        int localY = coordinateForLocalAxis(Direction.Axis.Y, axis, x, y, z, positionTileCount);
+        int localZ = coordinateForLocalAxis(Direction.Axis.Z, axis, x, y, z, positionTileCount);
+        return switch (localFace) {
+            case UP, DOWN -> positionKey(localX, localZ, mask);
+            case NORTH, SOUTH -> positionKey(localX, localY, mask);
+            case EAST, WEST -> positionKey(localZ, localY, mask);
         };
+    }
+
+    private static int coordinateForLocalAxis(Direction.Axis localAxis, Direction.Axis blockAxis, int x, int y, int z, int positionTileCount) {
+        Direction positiveWorldDirection = localToWorld(Direction.fromAxisAndDirection(localAxis, Direction.AxisDirection.POSITIVE), blockAxis);
+        int coordinate = switch (positiveWorldDirection.getAxis()) {
+            case X -> x;
+            case Y -> y;
+            case Z -> z;
+        };
+        return positiveWorldDirection.getAxisDirection() == Direction.AxisDirection.POSITIVE
+            ? coordinate
+            : Math.floorMod(-coordinate - 1, positionTileCount);
     }
 
     private static float[] fullFaceUv(Direction side) {

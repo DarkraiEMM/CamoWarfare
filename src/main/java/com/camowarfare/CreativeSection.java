@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 public enum CreativeSection {
     ATTACHMENTS("attachments", "\u9644\u4ef6\u7cfb\u7edf", "Attachments"),
     STENCILS("stencils", "\u55b7\u6d82\u677f", "Spray Stencils"),
+    DECALS("decals", "\u6c34\u8d34", "Decals"),
     WOODLAND("woodland", "\u6797\u5730\u8ff7\u5f69", "Woodland Camouflage"),
     MOUNTAIN("mountain", "\u5c71\u5730\u8ff7\u5f69", "Mountain Camouflage"),
     DESERT("desert", "\u6c99\u5730\u8ff7\u5f69", "Desert Camouflage"),

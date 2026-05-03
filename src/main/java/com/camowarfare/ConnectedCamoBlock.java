@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -59,6 +60,18 @@ public class ConnectedCamoBlock extends Block implements EntityBlock {
     }
 
     @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        super.onPlace(state, level, pos, oldState, movedByPiston);
+        refreshAtAndAround(level, pos);
+    }
+
+    @Override
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
+        super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
+        refreshAtAndAround(level, pos);
+    }
+
+    @Override
     protected BlockState updateShape(
             BlockState state,
             Direction direction,
@@ -69,7 +82,7 @@ public class ConnectedCamoBlock extends Block implements EntityBlock {
         return state.setValue(PROPERTIES_BY_DIRECTION.get(direction), connectsTo(neighborState));
     }
 
-    private BlockState updateConnections(BlockGetter level, BlockPos pos, BlockState state) {
+    BlockState updateConnections(BlockGetter level, BlockPos pos, BlockState state) {
         for (Direction direction : Direction.values()) {
             state = state.setValue(PROPERTIES_BY_DIRECTION.get(direction), connectsTo(level.getBlockState(pos.relative(direction))));
         }
@@ -87,6 +100,23 @@ public class ConnectedCamoBlock extends Block implements EntityBlock {
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new ConnectedCamoBlockEntity(pos, state);
+    }
+
+    private static void refreshAtAndAround(Level level, BlockPos pos) {
+        if (level.isClientSide) {
+            return;
+        }
+
+        refreshBlockEntity(level, pos);
+        for (Direction direction : Direction.values()) {
+            refreshBlockEntity(level, pos.relative(direction));
+        }
+    }
+
+    private static void refreshBlockEntity(Level level, BlockPos pos) {
+        if (level.getBlockEntity(pos) instanceof ConnectedCamoBlockEntity blockEntity) {
+            blockEntity.refreshConnectionsAndClient();
+        }
     }
 
     private static String normalizeConnectionFamily(String key) {

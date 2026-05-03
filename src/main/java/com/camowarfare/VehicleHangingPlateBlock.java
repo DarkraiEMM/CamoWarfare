@@ -158,6 +158,9 @@ public class VehicleHangingPlateBlock extends FaceMountedAttachmentBlock impleme
         }
 
         Block block = blockItem.getBlock();
+        if (block == CamoWarfare.SUSPICIOUS_ROAST_CHICKEN.get()) {
+            return true;
+        }
         if (block instanceof ChestBlock || block instanceof BarrelBlock || block instanceof ShulkerBoxBlock) {
             return true;
         }

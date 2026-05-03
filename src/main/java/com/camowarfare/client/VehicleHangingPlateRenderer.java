@@ -66,6 +66,9 @@ public class VehicleHangingPlateRenderer implements BlockEntityRenderer<VehicleH
         if (itemId.getNamespace().equals("sophisticatedbackpacks")) {
             return 0.0F;
         }
+        if (isSuspiciousRoastChicken(itemId)) {
+            return 0.0F;
+        }
         return 180.0F;
     }
 
@@ -74,6 +77,13 @@ public class VehicleHangingPlateRenderer implements BlockEntityRenderer<VehicleH
         if (itemId.getNamespace().equals("sophisticatedbackpacks")) {
             return 0.68F;
         }
+        if (isSuspiciousRoastChicken(itemId)) {
+            return 0.72F;
+        }
         return 0.54F;
+    }
+
+    private static boolean isSuspiciousRoastChicken(ResourceLocation itemId) {
+        return itemId.getNamespace().equals("camowarfare") && itemId.getPath().equals("suspicious_roast_chicken_block");
     }
 }

@@ -31,6 +31,15 @@ public class VehicleHangingPlateBlockEntity extends BlockEntity {
         super(CamoWarfare.VEHICLE_HANGING_PLATE_BLOCK_ENTITY.get(), pos, blockState);
     }
 
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (this.level != null && !this.level.isClientSide) {
+            BlockState state = this.getBlockState();
+            this.level.sendBlockUpdated(this.worldPosition, state, state, 3);
+        }
+    }
+
     public ItemStack mount(int slot) {
         return this.mounts[slot];
     }

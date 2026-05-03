@@ -42,6 +42,7 @@ repo/
 
 ### Local release and working files ###
 release/
+source/
 tmp/
 .tmp_*/
 META-INF/
