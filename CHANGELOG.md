@@ -1,64 +1,24 @@
 # CamoWarfare Changelog
 
-## 1.4.7
-
-### English
-
-- Added usage and mechanism tooltips for attachment blocks, spray stencils, and decals.
-- Fixed decal removal so Shift + empty-hand right-click removes the last decal from the clicked face.
-
-### 中文
-
-- 为附件方块、喷涂板和水贴新增用途与机制说明。
-- 修复水贴移除操作：现在 Shift + 空手右键目标面即可移除该面最后一张水贴。
-
-## 1.4.6
-
-### English
-
-- Rebuilt utility decal item icons from a saved shared decal-sheet backing extracted from the existing decal set, instead of approximating the backing procedurally.
-- Cleaned up utility decal markings further and added slightly stronger block wear so the symbols stay readable and consistent.
-
-### 中文
-
-- 将功能标识水贴的物品图标改为使用从现有水贴组提取并保存的共用底板，不再用程序近似仿造底板。
-- 进一步清理功能标识水贴图案，并加入稍深一些的块状磨损，让标识更清楚、更统一。
-
-## 1.4.5
-
-### English
-
-- Matched the utility decal item backing to the existing decal-sheet style.
-- Reduced utility decal wear again so the markings stay cleaner and easier to read.
-- Changed the medical marking to a red cross inside a white roundel.
-
-### 中文
-
-- 将功能标识水贴的物品底板统一到现有水贴底板风格。
-- 进一步减少功能标识水贴的磨损，让图案更干净、更容易识别。
-- 将医疗标识改为白色圆底包裹红十字。
-
-## 1.4.4
-
-### English
-
-- Reduced the utility decal distress pattern from fine speckling to larger worn patches so medical, radar, ammunition, and fuel markings stay readable in-world and in hand.
-
-### 中文
-
-- 调整功能标识水贴的旧化效果，从细碎噪点改为较大的磨损斑块，让医疗、雷达、弹药、燃油标识在世界中和手持时更容易识别。
-
 ## 1.4.3
 
 ### English
 
 - Added four utility marking decals: medical, radar, ammunition, and fuel.
 - Added item models, worn decal textures, creative-tab entries, translations, and basic dye + paper + slime-ball recipes for the new utility decals.
+- Rebuilt utility decal item icons from a saved shared decal-sheet backing extracted from the existing decal set, instead of approximating the backing procedurally.
+- Changed the medical marking to a red cross inside a white roundel and tuned utility decal wear to readable block damage.
+- Added usage and mechanism tooltips for attachment blocks, spray stencils, and decals.
+- Fixed decal removal so Shift + empty-hand right-click removes the last decal from the clicked face.
 
 ### 中文
 
 - 新增四种功能标识水贴：医疗、雷达、弹药、燃油。
 - 为这些功能标识补齐物品模型、旧化水贴贴图、创造栏条目、语言文本，以及染料 + 纸 + 粘液球基础配方。
+- 将功能标识水贴图标改为使用从现有水贴组提取并保存的共用底板，不再用程序近似仿造底板。
+- 将医疗标识改为白色圆底包裹红十字，并将旧化调整为清楚可读的块状磨损。
+- 为附件方块、喷涂板和水贴新增用途与机制说明。
+- 修复水贴移除操作：现在 Shift + 空手右键目标面即可移除该面最后一张水贴。
 
 ## 1.4.2
 
