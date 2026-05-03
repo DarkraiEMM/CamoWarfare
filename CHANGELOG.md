@@ -1,5 +1,17 @@
 # CamoWarfare Changelog
 
+## 1.4.6
+
+### English
+
+- Rebuilt utility decal item icons from a saved shared decal-sheet backing extracted from the existing decal set, instead of approximating the backing procedurally.
+- Cleaned up utility decal markings further and added slightly stronger block wear so the symbols stay readable and consistent.
+
+### 中文
+
+- 将功能标识水贴的物品图标改为使用从现有水贴组提取并保存的共用底板，不再用程序近似仿造底板。
+- 进一步清理功能标识水贴图案，并加入稍深一些的块状磨损，让标识更清楚、更统一。
+
 ## 1.4.5
 
 ### English
