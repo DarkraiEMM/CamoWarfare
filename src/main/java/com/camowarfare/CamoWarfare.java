@@ -20,6 +20,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -178,6 +179,7 @@ public final class CamoWarfare {
         BLOCK_ENTITY_TYPES.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
         modEventBus.addListener(RegisterPayloadHandlersEvent.class, WorldDecalNetworking::register);
+        NeoForge.EVENT_BUS.addListener(CamoDecalRemovalEvents::onRightClickBlock);
         SophisticatedBackpacksCompat.registerInventoryHandler();
         LOGGER.info("Initializing {}", MOD_ID);
     }
@@ -197,13 +199,13 @@ public final class CamoWarfare {
 
     private static DeferredBlock<Block> registerUtilityBlock(String name, BlockBehaviour.Properties properties) {
         DeferredBlock<Block> block = BLOCKS.register(name, () -> new Block(properties));
-        ITEMS.registerSimpleBlockItem(name, block);
+        ITEMS.registerItem(name, itemProperties -> new CamoTooltipBlockItem(block.get(), itemProperties, CamoTooltips.blockKey(name)));
         return block;
     }
 
     private static DeferredBlock<Block> registerCustomUtilityBlock(String name, java.util.function.Supplier<Block> supplier) {
         DeferredBlock<Block> block = BLOCKS.register(name, supplier);
-        ITEMS.registerSimpleBlockItem(name, block);
+        ITEMS.registerItem(name, itemProperties -> new CamoTooltipBlockItem(block.get(), itemProperties, CamoTooltips.blockKey(name)));
         return block;
     }
 
@@ -245,7 +247,10 @@ public final class CamoWarfare {
     private static Map<String, DeferredItem<Item>> registerSprayStencils() {
         Map<String, DeferredItem<Item>> items = new LinkedHashMap<>();
         for (SprayStencilDefinition definition : SPRAY_STENCILS) {
-            items.put(definition.id(), ITEMS.registerSimpleItem(definition.itemId()));
+            items.put(definition.id(), ITEMS.registerItem(
+                definition.itemId(),
+                properties -> new CamoTooltipItem(properties, "item.camowarfare.tooltip.spray_stencil")
+            ));
         }
         return Map.copyOf(items);
     }

@@ -1,5 +1,17 @@
 # CamoWarfare Changelog
 
+## 1.4.7
+
+### English
+
+- Added usage and mechanism tooltips for attachment blocks, spray stencils, and decals.
+- Fixed decal removal so Shift + empty-hand right-click removes the last decal from the clicked face.
+
+### 中文
+
+- 为附件方块、喷涂板和水贴新增用途与机制说明。
+- 修复水贴移除操作：现在 Shift + 空手右键目标面即可移除该面最后一张水贴。
+
 ## 1.4.6
 
 ### English

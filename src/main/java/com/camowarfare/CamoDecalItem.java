@@ -5,8 +5,11 @@ import java.util.List;
 import java.util.UUID;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -20,6 +23,14 @@ public final class CamoDecalItem extends Item {
     public CamoDecalItem(String decalId, Properties properties) {
         super(properties);
         this.decalId = decalId;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+        CamoTooltips.add(tooltip, largeDecalSize() == null
+            ? "item.camowarfare.tooltip.decal"
+            : "item.camowarfare.tooltip.decal_large");
     }
 
     @Override
@@ -78,6 +89,32 @@ public final class CamoDecalItem extends Item {
             WorldDecalNetworking.syncBlock(serverLevel, clickedPos);
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    static boolean removeLastDecal(Level level, BlockPos clickedPos, Direction face) {
+        BlockEntity blockEntity = level.getBlockEntity(clickedPos);
+        if (blockEntity instanceof ConnectedCamoBlockEntity connectedCamo) {
+            String removed = connectedCamo.removeLastDecal(face);
+            if (removed.isEmpty()) {
+                return false;
+            }
+            String groupId = ConnectedCamoBlockEntity.decalGroupId(removed);
+            if (!groupId.isEmpty()) {
+                removeDecalGroup(level, clickedPos, face, groupId);
+            }
+            return true;
+        }
+
+        if (level instanceof ServerLevel serverLevel) {
+            WorldDecalData decals = WorldDecalData.get(serverLevel);
+            String removed = decals.removeLastDecal(clickedPos, face);
+            if (removed.isEmpty()) {
+                return false;
+            }
+            WorldDecalNetworking.syncBlock(serverLevel, clickedPos);
+            return true;
+        }
+        return false;
     }
 
     private DecalSize largeDecalSize() {
