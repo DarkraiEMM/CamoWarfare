@@ -10,6 +10,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 
 public final class CamoDecalItem extends Item {
@@ -26,7 +28,7 @@ public final class CamoDecalItem extends Item {
         BlockPos clickedPos = context.getClickedPos();
         BlockEntity blockEntity = level.getBlockEntity(clickedPos);
         if (!(blockEntity instanceof ConnectedCamoBlockEntity connectedCamo)) {
-            return InteractionResult.PASS;
+            return useOnWorldBlock(context);
         }
 
         Direction face = context.getClickedFace();
@@ -48,6 +50,32 @@ public final class CamoDecalItem extends Item {
                     connectedCamo.addDecal(face, decalId);
                 }
             }
+        }
+        return InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    private InteractionResult useOnWorldBlock(UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos clickedPos = context.getClickedPos();
+        BlockState state = level.getBlockState(clickedPos);
+        if (!state.isCollisionShapeFullBlock(level, clickedPos)) {
+            return InteractionResult.PASS;
+        }
+
+        Direction face = context.getClickedFace();
+        if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
+            WorldDecalData decals = WorldDecalData.get(serverLevel);
+            Player player = context.getPlayer();
+            boolean removing = context.isSecondaryUseActive()
+                || (player != null && (player.isSecondaryUseActive() || player.isShiftKeyDown()));
+            if (removing) {
+                decals.removeLastDecal(clickedPos, face);
+            } else if (largeDecalSize() == null) {
+                decals.addDecal(clickedPos, face, decalId);
+            } else {
+                return InteractionResult.PASS;
+            }
+            WorldDecalNetworking.syncBlock(serverLevel, clickedPos);
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
     }

@@ -1,0 +1,22 @@
+﻿{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:decal_mark_white_star"
+                        },
+                        {
+                            "item":  "camowarfare:decal_mark_white_star"
+                        },
+                        {
+                            "item":  "camowarfare:decal_mark_white_star"
+                        },
+                        {
+                            "item":  "camowarfare:decal_mark_white_star"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:decal_mark_white_star_2x2",
+                   "count":  1
+               }
+}

@@ -1,0 +1,19 @@
+﻿{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        {
+                            "item":  "minecraft:paper"
+                        },
+                        {
+                            "item":  "minecraft:black_dye"
+                        },
+                        {
+                            "item":  "minecraft:slime_ball"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:decal_mark_black_star",
+                   "count":  4
+               }
+}

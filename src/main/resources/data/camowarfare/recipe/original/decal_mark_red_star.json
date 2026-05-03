@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " D ",
+    "DPD",
+    " S "
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:red_dye"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "id": "camowarfare:decal_mark_red_star",
+    "count": 4
+  }
+}

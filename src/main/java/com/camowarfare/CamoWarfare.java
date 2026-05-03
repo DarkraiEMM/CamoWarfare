@@ -24,6 +24,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.slf4j.Logger;
 
 @Mod(CamoWarfare.MOD_ID)
@@ -40,7 +41,7 @@ public final class CamoWarfare {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-    public static final DeferredBlock<Block> ARMOR_PLATE = registerUtilityBlock("armor_plate_block", armorPlateProperties());
+    public static final DeferredBlock<Block> ARMOR_PLATE = registerCustomUtilityBlock("armor_plate_block", () -> new DecalableArmorPlateBlock(armorPlateProperties()));
     public static final DeferredBlock<Block> MATTE_OLIVE_PANEL = registerCustomUtilityBlock("matte_olive_panel_block", () -> new ConnectedPreviewPanelBlock(armorPlateProperties()));
     public static final DeferredBlock<Block> DEFINITION_SAMPLE = registerCustomUtilityBlock("definition_sample_block", () -> new ConnectedCamoBlock("definition_sample", armorPlateProperties()));
     public static final DeferredBlock<Block> DEFINITION_SAMPLE_64 = registerCustomUtilityBlock("definition_sample_64_block", () -> new ConnectedCamoBlock("definition_sample_64", armorPlateProperties()));
@@ -78,6 +79,7 @@ public final class CamoWarfare {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ConnectedCamoBlockEntity>> CONNECTED_CAMO_BLOCK_ENTITY =
         BLOCK_ENTITY_TYPES.register("connected_camo", () -> {
             List<Block> blocks = new ArrayList<>();
+            blocks.add(ARMOR_PLATE.get());
             addConnectedCamoBlocks(blocks);
             return BlockEntityType.Builder.of(ConnectedCamoBlockEntity::new, blocks.toArray(Block[]::new)).build(null);
         });
@@ -175,8 +177,22 @@ public final class CamoWarfare {
         ITEMS.register(modEventBus);
         BLOCK_ENTITY_TYPES.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
+        modEventBus.addListener(RegisterPayloadHandlersEvent.class, WorldDecalNetworking::register);
         SophisticatedBackpacksCompat.registerInventoryHandler();
         LOGGER.info("Initializing {}", MOD_ID);
+    }
+
+    public static List<Block> attachmentArmorBlocks() {
+        List<Block> blocks = new ArrayList<>();
+        blocks.add(ADD_ON_ARMOR_PLATE.get());
+        blocks.add(SLAT_ARMOR.get());
+        blocks.add(VEHICLE_HANGING_PLATE.get());
+        for (AttachmentColor color : AttachmentColor.values()) {
+            blocks.add(COLORED_ADD_ON_ARMOR_BLOCKS.get(color).get());
+            blocks.add(COLORED_SLAT_ARMOR_BLOCKS.get(color).get());
+            blocks.add(COLORED_VEHICLE_HANGING_PLATE_BLOCKS.get(color).get());
+        }
+        return blocks;
     }
 
     private static DeferredBlock<Block> registerUtilityBlock(String name, BlockBehaviour.Properties properties) {
@@ -381,8 +397,18 @@ public final class CamoWarfare {
         decals.add(new DecalDefinition("mark_white_star"));
         decals.add(new DecalDefinition("mark_white_star_2x2"));
         decals.add(new DecalDefinition("mark_black_star"));
-        decals.add(new DecalDefinition("mark_chevron_white"));
-        decals.add(new DecalDefinition("mark_arrow_white"));
+        decals.add(new DecalDefinition("mark_tactical_bar_black"));
+        decals.add(new DecalDefinition("mark_tactical_double_bar_black"));
+        decals.add(new DecalDefinition("mark_tactical_chevron_black"));
+        decals.add(new DecalDefinition("mark_tactical_double_chevron_black"));
+        decals.add(new DecalDefinition("mark_arrow_white_up"));
+        decals.add(new DecalDefinition("mark_arrow_white_up_right"));
+        decals.add(new DecalDefinition("mark_arrow_white_right"));
+        decals.add(new DecalDefinition("mark_arrow_white_down_right"));
+        decals.add(new DecalDefinition("mark_arrow_white_down"));
+        decals.add(new DecalDefinition("mark_arrow_white_down_left"));
+        decals.add(new DecalDefinition("mark_arrow_white_left"));
+        decals.add(new DecalDefinition("mark_arrow_white_up_left"));
         decals.add(new DecalDefinition("mark_warning_triangle_red"));
         decals.add(new DecalDefinition("mark_warning_stripes"));
         decals.add(new DecalDefinition("mark_identification_bar_white"));

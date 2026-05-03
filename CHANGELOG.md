@@ -1,5 +1,33 @@
 # CamoWarfare Changelog
 
+## 1.4.2
+
+### English
+
+- Reworked the decal system so standard one-block decals can be placed on vanilla and modded full cubes, while connected camouflage blocks still support larger multi-block decals.
+- Added client-synced world decal rendering for ordinary full blocks and made decals visual-only, with no aviation mass, CBC armor value, or blast resistance contribution.
+- Refined decal art with dirtier, worn textures; rebuilt stars, numbers, warning stripes, warning triangles, identification bars, arrows, and black tactical rank markings.
+- Added eight-direction white arrow decals and black tactical bar/chevron rank decals.
+- Improved decal item icons and first-person held presentation so decals read more like sticker sheets in the inventory and hand.
+- Fixed decal tinting/overlay issues that made black and white star decals render red or pink.
+- Added decal crafting recipes, including dye + paper + slime-ball base recipes and ordered number cycling recipes in the crafting grid.
+- Reduced armor attachment break/hit particle load to avoid large particle bursts and related stutter.
+- Refined spray stencil icons.
+- Adjusted selected legacy/reset camouflage and solid-color palettes with clearer same-palette block variation, leaving the hand-made PLA, NATO, Turkish, EDRL, EMR, OCP, and night/low-visibility base camouflage sets untouched.
+
+### 中文
+
+- 重做水贴系统：普通单方块水贴现在可以贴到原版和其他 mod 的完整方块上，连接迷彩方块仍保留大尺寸多方块水贴能力。
+- 新增普通完整方块的客户端同步水贴渲染；水贴保持纯视觉属性，不提供航空学质量、CBC 装甲值或抗爆贡献。
+- 重绘水贴美术，整体更脏、更旧化；星徽、数字、警示条、警示三角、识别条、箭头和黑色战术军衔标识都已调整。
+- 新增八方向白色箭头水贴，以及黑色战术横杠/折杠军衔水贴。
+- 改进水贴物品图标和第一人称手持表现，让它在物品栏和手上更像一张贴纸。
+- 修复黑星、白星水贴在世界中被叠色成红色或粉色的问题。
+- 新增水贴合成配方，包括染料 + 纸 + 粘液球的基础配方，以及工作台内有序循环数字的配方。
+- 降低装甲挂件破坏/击打时的粒子量，缓解大量粒子导致的卡顿。
+- 精细化喷涂板物品图标。
+- 调整部分旧版/重置迷彩和纯色方块色板，让单方块内也能看到更清楚的同色系差分；手工生成的 PLA、北约、土耳其、EDRL、EMR、OCP 以及夜战/低可视基础迷彩未改动。
+
 ## 1.4.1
 
 ### English

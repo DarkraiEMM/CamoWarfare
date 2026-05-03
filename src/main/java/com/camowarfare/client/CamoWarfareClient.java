@@ -8,6 +8,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(modid = CamoWarfare.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class CamoWarfareClient {
@@ -22,5 +23,13 @@ public final class CamoWarfareClient {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(CamoWarfare.CONNECTED_CAMO_BLOCK_ENTITY.get(), ConnectedCamoDecalRenderer::new);
         event.registerBlockEntityRenderer(CamoWarfare.VEHICLE_HANGING_PLATE_BLOCK_ENTITY.get(), VehicleHangingPlateRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerBlock(
+            LightweightArmorParticleExtensions.INSTANCE,
+            CamoWarfare.attachmentArmorBlocks().toArray(net.minecraft.world.level.block.Block[]::new)
+        );
     }
 }

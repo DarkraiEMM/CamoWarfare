@@ -18,6 +18,7 @@ public final class ConnectedCamoDecalRenderer implements BlockEntityRenderer<Con
     private static final float MIN = 0.18F;
     private static final float MAX = 0.82F;
     private static final float EPSILON = 0.006F;
+    private static final float LAYER_EPSILON = 0.002F;
 
     public ConnectedCamoDecalRenderer(BlockEntityRendererProvider.Context context) {
     }
@@ -60,13 +61,14 @@ public final class ConnectedCamoDecalRenderer implements BlockEntityRenderer<Con
         PoseStack.Pose pose = poseStack.last();
         Matrix4f matrix = pose.pose();
         DecalBox box = boxFor(decal, index, count);
+        float offset = EPSILON + index * LAYER_EPSILON;
         switch (face) {
-            case NORTH -> quad(consumer, matrix, pose, box.maxX, box.maxY, -EPSILON, box.minX, box.maxY, -EPSILON, box.minX, box.minY, -EPSILON, box.maxX, box.minY, -EPSILON, decal, 0, 0, -1, packedLight, packedOverlay);
-            case SOUTH -> quad(consumer, matrix, pose, box.minX, box.maxY, 1 + EPSILON, box.maxX, box.maxY, 1 + EPSILON, box.maxX, box.minY, 1 + EPSILON, box.minX, box.minY, 1 + EPSILON, decal, 0, 0, 1, packedLight, packedOverlay);
-            case WEST -> quad(consumer, matrix, pose, -EPSILON, box.maxY, box.minX, -EPSILON, box.maxY, box.maxX, -EPSILON, box.minY, box.maxX, -EPSILON, box.minY, box.minX, decal, -1, 0, 0, packedLight, packedOverlay);
-            case EAST -> quad(consumer, matrix, pose, 1 + EPSILON, box.maxY, box.maxX, 1 + EPSILON, box.maxY, box.minX, 1 + EPSILON, box.minY, box.minX, 1 + EPSILON, box.minY, box.maxX, decal, 1, 0, 0, packedLight, packedOverlay);
-            case UP -> quad(consumer, matrix, pose, box.minX, 1 + EPSILON, box.minY, box.maxX, 1 + EPSILON, box.minY, box.maxX, 1 + EPSILON, box.maxY, box.minX, 1 + EPSILON, box.maxY, decal, 0, 1, 0, packedLight, packedOverlay);
-            case DOWN -> quad(consumer, matrix, pose, box.minX, -EPSILON, box.minY, box.maxX, -EPSILON, box.minY, box.maxX, -EPSILON, box.maxY, box.minX, -EPSILON, box.maxY, decal, 0, -1, 0, packedLight, packedOverlay);
+            case NORTH -> quad(consumer, matrix, pose, box.maxX, box.maxY, -offset, box.minX, box.maxY, -offset, box.minX, box.minY, -offset, box.maxX, box.minY, -offset, decal, 0, 0, -1, packedLight, packedOverlay);
+            case SOUTH -> quad(consumer, matrix, pose, box.minX, box.maxY, 1 + offset, box.maxX, box.maxY, 1 + offset, box.maxX, box.minY, 1 + offset, box.minX, box.minY, 1 + offset, decal, 0, 0, 1, packedLight, packedOverlay);
+            case WEST -> quad(consumer, matrix, pose, -offset, box.maxY, box.minX, -offset, box.maxY, box.maxX, -offset, box.minY, box.maxX, -offset, box.minY, box.minX, decal, -1, 0, 0, packedLight, packedOverlay);
+            case EAST -> quad(consumer, matrix, pose, 1 + offset, box.maxY, box.maxX, 1 + offset, box.maxY, box.minX, 1 + offset, box.minY, box.minX, 1 + offset, box.minY, box.maxX, decal, 1, 0, 0, packedLight, packedOverlay);
+            case UP -> quad(consumer, matrix, pose, box.minX, 1 + offset, box.minY, box.maxX, 1 + offset, box.minY, box.maxX, 1 + offset, box.maxY, box.minX, 1 + offset, box.maxY, decal, 0, 1, 0, packedLight, packedOverlay);
+            case DOWN -> quad(consumer, matrix, pose, box.minX, -offset, box.minY, box.maxX, -offset, box.minY, box.maxX, -offset, box.maxY, box.minX, -offset, box.maxY, decal, 0, -1, 0, packedLight, packedOverlay);
         }
     }
 
@@ -82,14 +84,11 @@ public final class ConnectedCamoDecalRenderer implements BlockEntityRenderer<Con
             float minX = 0.5F - total / 2.0F + index * (width + gap);
             return new DecalBox(minX, 0.12F, minX + width, 0.88F);
         }
-        if (decalId.equals("mark_identification_bar_white") || decalId.equals("mark_lowvis_bars")) {
-            return new DecalBox(0.18F, 0.28F, 0.82F, 0.72F);
-        }
-        if (decalId.equals("mark_warning_stripes")) {
-            return new DecalBox(0.10F, 0.05F, 0.90F, 0.30F);
-        }
         if (decalId.startsWith("number_")) {
             return new DecalBox(0.22F, 0.12F, 0.78F, 0.88F);
+        }
+        if (decalId.startsWith("mark_")) {
+            return new DecalBox(0.0F, 0.0F, 1.0F, 1.0F);
         }
         return new DecalBox(MIN, MIN, MAX, MAX);
     }

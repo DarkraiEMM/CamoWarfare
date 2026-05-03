@@ -1,0 +1,13 @@
+﻿{
+    "type":  "minecraft:crafting_shapeless",
+    "category":  "misc",
+    "ingredients":  [
+                        {
+                            "item":  "camowarfare:decal_number_white_6"
+                        }
+                    ],
+    "result":  {
+                   "id":  "camowarfare:decal_number_white_7",
+                   "count":  1
+               }
+}
