@@ -1,5 +1,19 @@
 # CamoWarfare Changelog
 
+## 1.4.5
+
+### English
+
+- Matched the utility decal item backing to the existing decal-sheet style.
+- Reduced utility decal wear again so the markings stay cleaner and easier to read.
+- Changed the medical marking to a red cross inside a white roundel.
+
+### 中文
+
+- 将功能标识水贴的物品底板统一到现有水贴底板风格。
+- 进一步减少功能标识水贴的磨损，让图案更干净、更容易识别。
+- 将医疗标识改为白色圆底包裹红十字。
+
 ## 1.4.4
 
 ### English
