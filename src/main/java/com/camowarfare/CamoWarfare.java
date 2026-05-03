@@ -413,6 +413,10 @@ public final class CamoWarfare {
         decals.add(new DecalDefinition("mark_warning_stripes"));
         decals.add(new DecalDefinition("mark_identification_bar_white"));
         decals.add(new DecalDefinition("mark_lowvis_bars"));
+        decals.add(new DecalDefinition("mark_medical_red"));
+        decals.add(new DecalDefinition("mark_radar_green"));
+        decals.add(new DecalDefinition("mark_ammo_yellow"));
+        decals.add(new DecalDefinition("mark_fuel_white"));
         for (String color : List.of("white", "black")) {
             for (int digit = 0; digit <= 9; digit++) {
                 decals.add(new DecalDefinition("number_" + color + "_" + digit));

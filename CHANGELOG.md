@@ -1,5 +1,17 @@
 # CamoWarfare Changelog
 
+## 1.4.3
+
+### English
+
+- Added four utility marking decals: medical, radar, ammunition, and fuel.
+- Added item models, worn decal textures, creative-tab entries, translations, and basic dye + paper + slime-ball recipes for the new utility decals.
+
+### 中文
+
+- 新增四种功能标识水贴：医疗、雷达、弹药、燃油。
+- 为这些功能标识补齐物品模型、旧化水贴贴图、创造栏条目、语言文本，以及染料 + 纸 + 粘液球基础配方。
+
 ## 1.4.2
 
 ### English

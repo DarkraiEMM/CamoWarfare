@@ -1,0 +1,24 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "category":  "misc",
+    "pattern":  [
+                    " D ",
+                    " P ",
+                    "S S"
+                ],
+    "key":  {
+                "D":  {
+                          "item":  "minecraft:white_dye"
+                      },
+                "P":  {
+                          "item":  "minecraft:paper"
+                      },
+                "S":  {
+                          "item":  "minecraft:slime_ball"
+                      }
+            },
+    "result":  {
+                   "id":  "camowarfare:decal_mark_fuel_white",
+                   "count":  4
+               }
+}
