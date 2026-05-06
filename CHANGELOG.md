@@ -4,13 +4,22 @@
 
 ### English
 
+- Reduced full camouflage and armor plate block blast resistance from 32 to 12 so high-explosive shells can cause clearer surface damage, while add-on armor plates keep their higher blast resistance.
+
+### 中文
+
+- 将完整迷彩方块和基础装甲板方块的爆炸抗性从 32 下调至 12，让高爆弹能造成更明确的表面破坏；外挂装甲板仍保留较高爆炸抗性。
+
+## 1.4.3
+
+### English
+
 - Added four utility marking decals: medical, radar, ammunition, and fuel.
 - Added item models, worn decal textures, creative-tab entries, translations, and basic dye + paper + slime-ball recipes for the new utility decals.
 - Rebuilt utility decal item icons from a saved shared decal-sheet backing extracted from the existing decal set, instead of approximating the backing procedurally.
 - Changed the medical marking to a red cross inside a white roundel and tuned utility decal wear to readable block damage.
 - Added usage and mechanism tooltips for attachment blocks, spray stencils, and decals.
 - Fixed decal removal so Shift + empty-hand right-click removes the last decal from the clicked face.
-- Reduced full camouflage and armor plate block blast resistance from 32 to 12 so high-explosive shells can cause clearer surface damage, while add-on armor plates keep their higher blast resistance.
 
 ### 中文
 
