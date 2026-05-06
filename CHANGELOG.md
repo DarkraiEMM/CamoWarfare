@@ -1,6 +1,6 @@
 # CamoWarfare Changelog
 
-## 1.4.3
+## 1.4.4
 
 ### English
 
@@ -10,6 +10,7 @@
 - Changed the medical marking to a red cross inside a white roundel and tuned utility decal wear to readable block damage.
 - Added usage and mechanism tooltips for attachment blocks, spray stencils, and decals.
 - Fixed decal removal so Shift + empty-hand right-click removes the last decal from the clicked face.
+- Reduced full camouflage and armor plate block blast resistance from 32 to 12 so high-explosive shells can cause clearer surface damage, while add-on armor plates keep their higher blast resistance.
 
 ### 中文
 

@@ -33,7 +33,8 @@ public final class CamoWarfare {
     public static final String MOD_ID = "camowarfare";
     public static final Logger LOGGER = LogUtils.getLogger();
     private static final float BLOCK_HARDNESS = 2.0F;
-    private static final float BLOCK_BLAST_RESISTANCE = 32.0F;
+    private static final float BLOCK_BLAST_RESISTANCE = 12.0F;
+    private static final float ADD_ON_ARMOR_BLAST_RESISTANCE = 32.0F;
     private static final float SLAT_ARMOR_HARDNESS = 1.0F;
     private static final float SLAT_ARMOR_BLAST_RESISTANCE = 8.0F;
 
@@ -477,7 +478,7 @@ public final class CamoWarfare {
     private static BlockBehaviour.Properties addOnArmorPlateProperties(MapColor mapColor) {
         return BlockBehaviour.Properties.of()
             .mapColor(mapColor)
-            .strength(BLOCK_HARDNESS, BLOCK_BLAST_RESISTANCE)
+            .strength(BLOCK_HARDNESS, ADD_ON_ARMOR_BLAST_RESISTANCE)
             .requiresCorrectToolForDrops();
     }
 
