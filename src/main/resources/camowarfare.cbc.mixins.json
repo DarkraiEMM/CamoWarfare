@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "package": "com.camowarfare.compat.cbc.mixin",
+  "plugin": "com.camowarfare.compat.cbc.CbcCompatMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CreateBigCannonsBigProjectileMixin",
+    "CreateBigCannonsProjectileMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

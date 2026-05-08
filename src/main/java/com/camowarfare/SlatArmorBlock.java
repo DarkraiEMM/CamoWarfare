@@ -130,6 +130,15 @@ public class SlatArmorBlock extends FaceMountedAttachmentBlock {
         );
     }
 
+    private static VoxelShape slatCollisionShape(BoxFactory box) {
+        return Shapes.or(
+            box.create(3.45, 2.0, 10.95, 3.55, 14.0, 11.15),
+            box.create(6.45, 2.0, 10.95, 6.55, 14.0, 11.15),
+            box.create(9.45, 2.0, 10.95, 9.55, 14.0, 11.15),
+            box.create(12.45, 2.0, 10.95, 12.55, 14.0, 11.15)
+        );
+    }
+
     private static VoxelShape leftConnectionShape(BoxFactory box) {
         return Shapes.or(
             box.create(0, 3.1, 12, 1, 3.55, 16),
@@ -191,7 +200,7 @@ public class SlatArmorBlock extends FaceMountedAttachmentBlock {
 
     @Override
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return getShape(state, level, pos, context);
+        return slatCollisionShape(boxFactoryFor(state.getValue(FACING)));
     }
 
     private static BoxFactory boxFactoryFor(Direction facing) {

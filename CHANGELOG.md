@@ -1,14 +1,56 @@
 # CamoWarfare Changelog
 
-## 1.4.4
+## 1.4.5
 
 ### English
 
-- Reduced full camouflage and armor plate block blast resistance from 32 to 12 so high-explosive shells can cause clearer surface damage, while add-on armor plates keep their higher blast resistance.
+- Rebalanced camouflage hull and armor attachment durability for Create Big Cannons combat, with stronger full-block armor values and revised blast resistance.
+- Added optional Create Big Cannons compatibility in a dedicated mixin config so CamoWarfare can still run without CBC installed.
+- Added reactive armor behavior for add-on armor plates: CBC projectiles now break the reactive plate, trigger a small non-destructive blast effect, and are consumed before normal penetration or over-penetration can damage armor behind it.
+- Changed slat armor CBC behavior so cannon projectiles pass through cleanly, with a chance to reduce projectile mass and slightly reduce velocity instead of invoking normal block penetration.
+- Reduced slat armor collision coverage so projectiles only interact with the sparse bars instead of the full visual panel.
+- Restored Create Creative Worldshaper sampling for the decalable armor plate by marking it as safe for NBT-aware block selection.
 
 ### 中文
 
-- 将完整迷彩方块和基础装甲板方块的爆炸抗性从 32 下调至 12，让高爆弹能造成更明确的表面破坏；外挂装甲板仍保留较高爆炸抗性。
+- 重新平衡迷彩车体方块和装甲附件在 Create Big Cannons 战斗中的耐久表现，提高完整装甲方块的抗穿能力并调整爆炸抗性。
+- 将 Create Big Cannons 兼容逻辑拆分到独立的可选 mixin 配置中，未安装 CBC 时迷彩战车仍可正常加载。
+- 为附加装甲板加入爆反行为：CBC 炮弹命中后会击碎爆反板，触发小型非破坏性爆炸效果，并在进入普通穿深或过穿结算前抵消炮弹。
+- 调整格栅装甲的 CBC 行为：炮弹会顺畅穿过格栅，并有概率削减炮弹质量和少量速度，不再触发普通方块穿透结算。
+- 缩小格栅装甲碰撞判定，让炮弹只与稀疏杆件交互，而不是碰到完整视觉面板就进入碰撞。
+- 将可贴花基础装甲板标记为 Create 安全 NBT 方块，恢复创造环境改造枪对该方块的取样识别。
+
+## 1.4.4test18
+
+### English
+
+- Tuned full camouflage and armor plate block blast resistance from 32 to 24 and raised their Create Big Cannons penetration resistance from 16 to 36, while keeping CBC hardness at 2 and leaving add-on armor plate blast resistance higher.
+- Restored add-on armor plate CBC values to the proven reactive-armor setup after test5 incorrectly swapped hardness and toughness.
+- Lowered add-on armor plate CBC tag toughness from 1 to 0.1 for reactive-armor testing.
+- Set add-on armor plate CBC values to hardness 0.1 and toughness 56, and set full armor block CBC values to hardness 3 and toughness 56.
+- Swapped add-on armor plate CBC test values to hardness 56 and toughness 0.1.
+- Set add-on armor plate CBC values to hardness 512 and toughness 0.1, and set full armor block CBC values to hardness 64 and toughness 3.
+- Corrected the CBC value orientation for this test: add-on armor plates now use hardness 0.1 and toughness 512, while full armor blocks use hardness 3 and toughness 64.
+- Moved Create Big Cannons compatibility into a dedicated optional mixin config that only applies when CBC is present.
+- Added reactive armor interception against CBC projectiles: add-on armor plates break without drops and consume the projectile before normal penetration or over-penetration handling runs.
+- Fixed the CBC compatibility mixin gate so it checks for CBC class resources without loading CBC classes during early mixin preparation.
+- Added a small non-destructive explosion effect when reactive armor consumes a CBC projectile.
+- Changed slat armor CBC handling so hits pass through cleanly, with a chance to reduce projectile mass and slightly reduce velocity instead of invoking normal block penetration.
+- Reduced slat armor collision coverage so cannon projectiles only collide with sparse thin bars instead of the full visual grille.
+- Added Create Big Cannons compatibility for slat armor so non-intercepting slat hits pass through without the projectile stutter caused by full impact handling.
+- Marked the decalable armor plate as safe for Create's NBT-aware worldshaper selection, restoring block sampling with the Creative Worldshaper.
+
+### 中文
+
+- 将完整迷彩方块和基础装甲板方块的爆炸抗性从 32 调整为 24，并将其 Create Big Cannons 抗穿数值从 16 提高到 36；CBC 硬度保持 2，外挂装甲板仍保留较高爆炸抗性。
+- 将外挂装甲板 CBC 数值恢复为此前验证可用的爆反配置；test5 中误将硬度和韧性对调，已撤回。
+- 将外挂装甲板 CBC 标签韧性从 1 调到 0.1，用于爆反行为测试。
+- 将外挂装甲板 CBC 数值设为硬度 0.1、韧性 56；将所有完整装甲方块 CBC 数值设为硬度 3、韧性 56。
+- 将外挂装甲板 CBC 测试数值对调为硬度 56、韧性 0.1。
+- 将外挂装甲板 CBC 数值设为硬度 512、韧性 0.1；将所有完整装甲方块 CBC 数值设为硬度 64、韧性 3。
+- 缩小格栅装甲碰撞判定范围，让炮弹只会命中少量细判定杆，而不是擦到完整视觉格栅就进入碰撞结算。
+- 新增 Create Big Cannons 格栅装甲兼容：未触发拦截的格栅命中会直接穿过，避免进入完整命中结算造成炮弹卡顿。
+- 将可贴花基础装甲板标记为 Create 安全 NBT 方块，恢复创造环境改造枪对该方块的取样识别。
 
 ## 1.4.3
 

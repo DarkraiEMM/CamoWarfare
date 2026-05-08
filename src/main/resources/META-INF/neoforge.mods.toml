@@ -15,6 +15,9 @@ Adds modular camouflage hull blocks, attachment armor, and grouped creative tabs
 [[mixins]]
 config="camowarfare.mixins.json"
 
+[[mixins]]
+config="camowarfare.cbc.mixins.json"
+
 [[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"

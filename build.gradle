@@ -124,6 +124,10 @@ dependencies {
     if (localCreateJarUtf.exists()) {
         compileOnly files(localCreateJarUtf)
     }
+    compileOnly fileTree(
+        dir: "G:/.minecraft/versions/\u8ff7\u5f69\u6218\u8f66\u6d4b\u8bd5/mods",
+        include: ["*createbigcannons*.jar"]
+    )
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
