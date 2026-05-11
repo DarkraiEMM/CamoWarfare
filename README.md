@@ -82,4 +82,4 @@ For Modrinth and CurseForge, use:
 
 ## License
 
-All Rights Reserved.
+All Rights Reserved. See [LICENSE](LICENSE) for the full project license.
