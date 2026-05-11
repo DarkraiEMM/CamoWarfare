@@ -28,6 +28,14 @@ sourceSets.main.resources {
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
     maven { url = 'https://maven.blamejared.com' }
+    maven { url = 'https://maven.createmod.net' }
+    maven { url = 'https://maven.ithundxr.dev/snapshots' }
+    maven {
+        url = 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
 }
 
 base {
@@ -106,6 +114,16 @@ dependencies {
     // Optional JEI API for hiding creative-divider marker items from the ingredient list.
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+
+    // Optional compatibility APIs/classes. These stay compile-only so these mods are not required at runtime.
+    compileOnly("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") {
+        transitive = false
+    }
+    compileOnly "net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}"
+    compileOnly "dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}"
+    compileOnly "com.tterrag.registrate:Registrate:${registrate_version}"
+    compileOnly "curse.maven:copycats-968398:${copycats_curse_file}"
+    compileOnly "curse.maven:create-big-cannons-646668:${create_big_cannons_curse_file}"
 
     // Optional Copycats+ API/classes for client-side compatibility mixins during local builds.
     def localCopycatsJar = file("G:/.minecraft/versions/迷彩战车测试/mods/[机械动力：伪装方块+] copycats-3.0.4+mc.1.21.1-neoforge.jar")
