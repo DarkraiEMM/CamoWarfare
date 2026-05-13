@@ -1,6 +1,7 @@
 package com.camowarfare;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.UUID;
 import net.minecraft.core.BlockPos;
@@ -95,14 +96,13 @@ public final class CamoDecalItem extends Item {
         BlockEntity blockEntity = level.getBlockEntity(clickedPos);
         if (blockEntity instanceof ConnectedCamoBlockEntity connectedCamo) {
             String removed = connectedCamo.removeLastDecal(face);
-            if (removed.isEmpty()) {
-                return false;
+            if (!removed.isEmpty()) {
+                String groupId = ConnectedCamoBlockEntity.decalGroupId(removed);
+                if (!groupId.isEmpty()) {
+                    removeDecalGroup(level, clickedPos, face, groupId);
+                }
+                return true;
             }
-            String groupId = ConnectedCamoBlockEntity.decalGroupId(removed);
-            if (!groupId.isEmpty()) {
-                removeDecalGroup(level, clickedPos, face, groupId);
-            }
-            return true;
         }
 
         if (level instanceof ServerLevel serverLevel) {
@@ -115,6 +115,27 @@ public final class CamoDecalItem extends Item {
             return true;
         }
         return false;
+    }
+
+    static InteractionResult removeLastDecalWithoutItem(Level level, BlockPos clickedPos, Player player, Direction face) {
+        if (!player.isShiftKeyDown()) {
+            return InteractionResult.PASS;
+        }
+        if (level.isClientSide) {
+            return hasClientDecal(level, clickedPos, face) ? InteractionResult.SUCCESS : InteractionResult.PASS;
+        }
+        return removeLastDecal(level, clickedPos, face) ? InteractionResult.SUCCESS : InteractionResult.PASS;
+    }
+
+    private static boolean hasClientDecal(Level level, BlockPos clickedPos, Direction face) {
+        BlockEntity blockEntity = level.getBlockEntity(clickedPos);
+        if (blockEntity instanceof ConnectedCamoBlockEntity connectedCamo && !connectedCamo.decals(face).isEmpty()) {
+            return true;
+        }
+
+        EnumMap<Direction, List<String>> faces = WorldDecalClientStore.decals().get(clickedPos);
+        List<String> faceDecals = faces == null ? null : faces.get(face);
+        return faceDecals != null && !faceDecals.isEmpty();
     }
 
     private DecalSize largeDecalSize() {

@@ -8,6 +8,8 @@
 - Added Copycats+ slope, slope-layer, and straight-stair placement support for add-on armor plates and slat armor so attachments can follow sloped vehicle hulls.
 - Added sloped slat armor models with matching lightweight collision and neighbor-refreshing connector logic for continuous grille runs across slopes.
 - Added colored crafting recipes for add-on armor plates, slat armor, vehicle hanging plates, and vehicle deck hatches.
+- Added the Commission 23 Pilot custom player decal.
+- Fixed sneak-empty-hand decal removal on connected camouflage blocks and decalable armor plates, including fallback cleanup for decals saved as world decals.
 - Refactored Copycats surface detection into shared attachment support code and removed obsolete vehicle hatch texture leftovers.
 
 ### 中文
@@ -16,6 +18,8 @@
 - 为附加装甲板和格栅装甲新增 Copycats+ 斜坡、斜坡层、直楼梯贴附支持，让附件可以跟随倾斜车体表面。
 - 新增斜面格栅装甲模型、轻量碰撞和邻近刷新连接逻辑，使格栅能在连续斜面上衔接。
 - 补齐附加装甲板、格栅装甲、车体挂载板和车厢舱盖的不同颜色合成配方。
+- 新增“23号飞行员”玩家定制水贴。
+- 修复连接迷彩方块和可贴花装甲板上潜行空手右键无法擦除水贴的问题，并兼容清理旧包可能留下的普通世界水贴数据。
 - 将 Copycats 斜面识别抽成共用附件支撑逻辑，并移除不再引用的舱盖残留贴图。
 
 ## 1.4.5

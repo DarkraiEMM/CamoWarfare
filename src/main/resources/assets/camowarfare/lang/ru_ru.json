@@ -398,6 +398,7 @@
   "item.camowarfare.decal_mark_radar_green": "Радарная маркировочная декаль",
   "item.camowarfare.decal_mark_ammo_yellow": "Маркировочная декаль боеприпасов",
   "item.camowarfare.decal_mark_fuel_white": "Топливная маркировочная декаль",
+  "item.camowarfare.decal_commission_23_pilot": "Commission 23 Pilot Decal",
   "item.camowarfare.tooltip.attachment.armor_plate.summary": "Полная бронепанель для корпуса или основы под декали.",
   "item.camowarfare.tooltip.attachment.armor_plate.use": "Ставится как обычный блок; на каждую грань можно наносить декали.",
   "item.camowarfare.tooltip.attachment.armor_plate.mechanic": "Декали на ней только визуальные и не дают массу или броню.",

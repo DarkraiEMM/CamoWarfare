@@ -1,0 +1,6 @@
+{
+  "parent": "camowarfare:item/decal_mark_medical_red",
+  "textures": {
+    "layer0": "camowarfare:item/decal_commission_23_pilot"
+  }
+}
