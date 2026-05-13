@@ -398,7 +398,7 @@
   "item.camowarfare.decal_mark_radar_green": "Décalque de marquage radar",
   "item.camowarfare.decal_mark_ammo_yellow": "Décalque de marquage munitions",
   "item.camowarfare.decal_mark_fuel_white": "Décalque de marquage carburant",
-  "item.camowarfare.decal_commission_23_pilot": "Décalque pilote commande 23",
+  "item.camowarfare.decal_commission_23_pilot_2x2": "Décalque pilote commande 23 2x2",
   "item.camowarfare.tooltip.attachment.armor_plate.summary": "Un panneau de blindage complet pour coque ou support de décalques.",
   "item.camowarfare.tooltip.attachment.armor_plate.use": "Se place comme un bloc normal ; chaque face peut recevoir des décalques.",
   "item.camowarfare.tooltip.attachment.armor_plate.mechanic": "Les décalques dessus sont seulement visuels et n'ajoutent ni masse ni blindage.",

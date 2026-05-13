@@ -434,7 +434,7 @@ public final class CamoWarfare {
         decals.add(new DecalDefinition("mark_radar_green"));
         decals.add(new DecalDefinition("mark_ammo_yellow"));
         decals.add(new DecalDefinition("mark_fuel_white"));
-        decals.add(new DecalDefinition("commission_23_pilot"));
+        decals.add(new DecalDefinition("commission_23_pilot_2x2"));
         for (String color : List.of("white", "black")) {
             for (int digit = 0; digit <= 9; digit++) {
                 decals.add(new DecalDefinition("number_" + color + "_" + digit));
