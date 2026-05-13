@@ -28,7 +28,13 @@ final class CamoDecalRemovalEvents {
 
         Level level = event.getLevel();
         BlockPos pos = event.getPos();
-        if (level.isClientSide || !CamoDecalItem.removeLastDecal(level, pos, face)) {
+        if (level.isClientSide) {
+            event.setCanceled(true);
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            return;
+        }
+
+        if (!CamoDecalItem.removeLastDecal(level, pos, face)) {
             return;
         }
 
