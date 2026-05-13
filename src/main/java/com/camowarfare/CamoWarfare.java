@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -187,7 +188,7 @@ public final class CamoWarfare {
         BLOCK_ENTITY_TYPES.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
         modEventBus.addListener(RegisterPayloadHandlersEvent.class, WorldDecalNetworking::register);
-        NeoForge.EVENT_BUS.addListener(CamoDecalRemovalEvents::onRightClickBlock);
+        NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, CamoDecalRemovalEvents::onRightClickBlock);
         SophisticatedBackpacksCompat.registerInventoryHandler();
         LOGGER.info("Initializing {}", MOD_ID);
     }

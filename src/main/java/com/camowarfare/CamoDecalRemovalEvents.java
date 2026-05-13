@@ -29,8 +29,7 @@ final class CamoDecalRemovalEvents {
         Level level = event.getLevel();
         BlockPos pos = event.getPos();
         if (level.isClientSide) {
-            event.setCanceled(true);
-            event.setCancellationResult(InteractionResult.SUCCESS);
+            consume(event);
             return;
         }
 
@@ -38,6 +37,10 @@ final class CamoDecalRemovalEvents {
             return;
         }
 
+        consume(event);
+    }
+
+    private static void consume(PlayerInteractEvent.RightClickBlock event) {
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
     }
