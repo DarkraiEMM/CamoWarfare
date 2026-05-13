@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:tnt"
+    },
+    {
+      "item": "camowarfare:solid_bluegray_standard_block"
+    }
+  ],
+  "result": {
+    "id": "camowarfare:add_on_armor_plate_bluegray_block",
+    "count": 2
+  }
+}

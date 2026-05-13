@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "camowarfare:us_carc_desert_tan_standard_block"
+    }
+  },
+  "result": {
+    "id": "camowarfare:slat_armor_desert_sand_block",
+    "count": 16
+  }
+}

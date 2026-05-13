@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "camowarfare:vehicle_deck_hatch_block"
+    },
+    {
+      "item": "camowarfare:solid_night_black_standard_block"
+    }
+  ],
+  "result": {
+    "id": "camowarfare:vehicle_deck_hatch_night_black_block",
+    "count": 1
+  }
+}

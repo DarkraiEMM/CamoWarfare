@@ -1,0 +1,9 @@
+{
+  "parent": "camowarfare:block/slat_armor_slope_top_template",
+  "textures": {
+    "frame": "camowarfare:block/solid_bluegray/a",
+    "bar": "camowarfare:block/solid_bluegray/a",
+    "lip": "camowarfare:block/solid_bluegray/a",
+    "particle": "camowarfare:block/solid_bluegray/a"
+  }
+}

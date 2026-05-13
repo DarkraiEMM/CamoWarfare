@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north,half=bottom,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_bottom" },
+    "facing=east,half=bottom,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_bottom", "y": 90 },
+    "facing=south,half=bottom,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_bottom", "y": 180 },
+    "facing=west,half=bottom,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_bottom", "y": 270 },
+    "facing=north,half=top,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_top" },
+    "facing=east,half=top,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_top", "y": 90 },
+    "facing=south,half=top,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_top", "y": 180 },
+    "facing=west,half=top,open=false": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_top", "y": 270 },
+    "facing=north,half=bottom,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open" },
+    "facing=east,half=bottom,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open", "y": 90 },
+    "facing=south,half=bottom,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open", "y": 180 },
+    "facing=west,half=bottom,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open", "y": 270 },
+    "facing=north,half=top,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open" },
+    "facing=east,half=top,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open", "y": 90 },
+    "facing=south,half=top,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open", "y": 180 },
+    "facing=west,half=top,open=true": { "model": "camowarfare:block/vehicle_deck_hatch_bluegray_block_open", "y": 270 }
+  }
+}

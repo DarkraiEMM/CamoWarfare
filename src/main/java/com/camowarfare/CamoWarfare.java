@@ -60,11 +60,13 @@ public final class CamoWarfare {
     public static final DeferredBlock<Block> ADD_ON_ARMOR_PLATE = registerCustomUtilityBlock("add_on_armor_plate_block", () -> new AddOnArmorPlateBlock(addOnArmorPlateProperties(MapColor.METAL)));
     public static final DeferredBlock<Block> SLAT_ARMOR = registerCustomUtilityBlock("slat_armor_block", () -> new SlatArmorBlock(slatArmorProperties(MapColor.METAL)));
     public static final DeferredBlock<Block> VEHICLE_HANGING_PLATE = registerCustomUtilityBlock("vehicle_hanging_plate_block", () -> new VehicleHangingPlateBlock(vehicleHangingPlateProperties(MapColor.METAL)));
+    public static final DeferredBlock<Block> VEHICLE_DECK_HATCH = registerCustomUtilityBlock("vehicle_deck_hatch_block", () -> new VehicleDeckHatchBlock(vehicleDeckHatchProperties(MapColor.METAL)));
     public static final DeferredBlock<Block> SUSPICIOUS_ROAST_CHICKEN = registerCustomUtilityBlock("suspicious_roast_chicken_block", () -> new SuspiciousRoastChickenBlock(suspiciousRoastChickenProperties()));
 
     private static final Map<AttachmentColor, DeferredBlock<Block>> COLORED_ADD_ON_ARMOR_BLOCKS = new EnumMap<>(AttachmentColor.class);
     private static final Map<AttachmentColor, DeferredBlock<Block>> COLORED_SLAT_ARMOR_BLOCKS = new EnumMap<>(AttachmentColor.class);
     private static final Map<AttachmentColor, DeferredBlock<Block>> COLORED_VEHICLE_HANGING_PLATE_BLOCKS = new EnumMap<>(AttachmentColor.class);
+    private static final Map<AttachmentColor, DeferredBlock<Block>> COLORED_VEHICLE_DECK_HATCH_BLOCKS = new EnumMap<>(AttachmentColor.class);
     private static final Map<CreativeSection, List<DeferredItem<Item>>> SECTION_DIVIDER_ITEMS = new EnumMap<>(CreativeSection.class);
     private static final Map<CreativeSection, List<DeferredItem<Item>>> SECTION_SPACERS = new EnumMap<>(CreativeSection.class);
     private static final List<java.util.function.Supplier<? extends ItemLike>> TAB_ENTRIES = new ArrayList<>();
@@ -130,9 +132,14 @@ public final class CamoWarfare {
                 "vehicle_hanging_plate_" + color.id() + "_block",
                 () -> new VehicleHangingPlateBlock(vehicleHangingPlateProperties(color.mapColor()))
             );
+            DeferredBlock<Block> deckHatch = registerCustomUtilityBlock(
+                "vehicle_deck_hatch_" + color.id() + "_block",
+                () -> new VehicleDeckHatchBlock(vehicleDeckHatchProperties(color.mapColor()))
+            );
             COLORED_ADD_ON_ARMOR_BLOCKS.put(color, addOn);
             COLORED_SLAT_ARMOR_BLOCKS.put(color, slat);
             COLORED_VEHICLE_HANGING_PLATE_BLOCKS.put(color, hangingPlate);
+            COLORED_VEHICLE_DECK_HATCH_BLOCKS.put(color, deckHatch);
         }
         addAttachmentSection();
         addStencilSection();
@@ -190,10 +197,12 @@ public final class CamoWarfare {
         blocks.add(ADD_ON_ARMOR_PLATE.get());
         blocks.add(SLAT_ARMOR.get());
         blocks.add(VEHICLE_HANGING_PLATE.get());
+        blocks.add(VEHICLE_DECK_HATCH.get());
         for (AttachmentColor color : AttachmentColor.values()) {
             blocks.add(COLORED_ADD_ON_ARMOR_BLOCKS.get(color).get());
             blocks.add(COLORED_SLAT_ARMOR_BLOCKS.get(color).get());
             blocks.add(COLORED_VEHICLE_HANGING_PLATE_BLOCKS.get(color).get());
+            blocks.add(COLORED_VEHICLE_DECK_HATCH_BLOCKS.get(color).get());
         }
         return blocks;
     }
@@ -279,11 +288,13 @@ public final class CamoWarfare {
         TAB_ENTRIES.add(ADD_ON_ARMOR_PLATE);
         TAB_ENTRIES.add(SLAT_ARMOR);
         TAB_ENTRIES.add(VEHICLE_HANGING_PLATE);
+        TAB_ENTRIES.add(VEHICLE_DECK_HATCH);
         TAB_ENTRIES.add(SUSPICIOUS_ROAST_CHICKEN);
         for (AttachmentColor color : AttachmentColor.values()) {
             TAB_ENTRIES.add(COLORED_ADD_ON_ARMOR_BLOCKS.get(color));
             TAB_ENTRIES.add(COLORED_SLAT_ARMOR_BLOCKS.get(color));
             TAB_ENTRIES.add(COLORED_VEHICLE_HANGING_PLATE_BLOCKS.get(color));
+            TAB_ENTRIES.add(COLORED_VEHICLE_DECK_HATCH_BLOCKS.get(color));
         }
     }
 
@@ -491,6 +502,14 @@ public final class CamoWarfare {
     }
 
     private static BlockBehaviour.Properties vehicleHangingPlateProperties(MapColor mapColor) {
+        return BlockBehaviour.Properties.of()
+            .mapColor(mapColor)
+            .strength(SLAT_ARMOR_HARDNESS, SLAT_ARMOR_BLAST_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .noOcclusion();
+    }
+
+    private static BlockBehaviour.Properties vehicleDeckHatchProperties(MapColor mapColor) {
         return BlockBehaviour.Properties.of()
             .mapColor(mapColor)
             .strength(SLAT_ARMOR_HARDNESS, SLAT_ARMOR_BLAST_RESISTANCE)

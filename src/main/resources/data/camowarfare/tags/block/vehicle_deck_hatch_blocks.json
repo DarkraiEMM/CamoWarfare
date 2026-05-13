@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "camowarfare:vehicle_deck_hatch_block",
+    "camowarfare:vehicle_deck_hatch_military_green_block",
+    "camowarfare:vehicle_deck_hatch_desert_sand_block",
+    "camowarfare:vehicle_deck_hatch_bluegray_block",
+    "camowarfare:vehicle_deck_hatch_night_black_block"
+  ]
+}

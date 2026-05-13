@@ -10,6 +10,11 @@
 - Changed slat armor CBC behavior so cannon projectiles pass through cleanly, with a chance to reduce projectile mass and slightly reduce velocity instead of invoking normal block penetration.
 - Reduced slat armor collision coverage so projectiles only interact with the sparse bars instead of the full visual panel.
 - Restored Create Creative Worldshaper sampling for the decalable armor plate by marking it as safe for NBT-aware block selection.
+- Added vehicle deck hatches with trapdoor-style placement, metal hatch sounds, redstone opening, waterlogging, color variants, loot tables, recipes, translations, and tooltips.
+- Added Copycats+ slope, slope-layer, and straight-stair placement support for add-on armor plates and slat armor so attachments can follow sloped vehicle hulls.
+- Added sloped slat armor models with matching lightweight collision and neighbor-refreshing connector logic for continuous grille runs across slopes.
+- Added colored crafting recipes for add-on armor plates, slat armor, vehicle hanging plates, and vehicle deck hatches.
+- Refactored Copycats surface detection into shared attachment support code and removed obsolete vehicle hatch texture leftovers.
 
 ### 中文
 
@@ -19,6 +24,11 @@
 - 调整格栅装甲的 CBC 行为：炮弹会顺畅穿过格栅，并有概率削减炮弹质量和少量速度，不再触发普通方块穿透结算。
 - 缩小格栅装甲碰撞判定，让炮弹只与稀疏杆件交互，而不是碰到完整视觉面板就进入碰撞。
 - 将可贴花基础装甲板标记为 Create 安全 NBT 方块，恢复创造环境改造枪对该方块的取样识别。
+- 新增车厢舱盖，支持原版活板门式放置、金属舱盖声音、红石开合、水含水状态，并补齐颜色变体、掉落表、配方、翻译和提示文本。
+- 为附加装甲板和格栅装甲新增 Copycats+ 斜坡、斜坡层、直楼梯贴附支持，让附件可以跟随倾斜车体表面。
+- 新增斜面格栅装甲模型、轻量碰撞和邻近刷新连接逻辑，使格栅能在连续斜面上衔接。
+- 补齐附加装甲板、格栅装甲、车体挂载板和车厢舱盖的不同颜色合成配方。
+- 将 Copycats 斜面识别抽成共用附件支撑逻辑，并移除不再引用的舱盖残留贴图。
 
 ## 1.4.4test18
 

@@ -1,18 +1,63 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,half=bottom,sloped=false": {
       "model": "camowarfare:block/add_on_armor_plate_military_green_block"
     },
-    "facing=east": {
+    "facing=north,half=bottom,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_bottom"
+    },
+    "facing=east,half=bottom,sloped=false": {
       "model": "camowarfare:block/add_on_armor_plate_military_green_block",
       "y": 90
     },
-    "facing=south": {
+    "facing=east,half=bottom,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_bottom",
+      "y": 90
+    },
+    "facing=south,half=bottom,sloped=false": {
       "model": "camowarfare:block/add_on_armor_plate_military_green_block",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,half=bottom,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_bottom",
+      "y": 180
+    },
+    "facing=west,half=bottom,sloped=false": {
       "model": "camowarfare:block/add_on_armor_plate_military_green_block",
+      "y": 270
+    },
+    "facing=west,half=bottom,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_bottom",
+      "y": 270
+    },
+    "facing=north,half=top,sloped=false": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block"
+    },
+    "facing=north,half=top,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_top"
+    },
+    "facing=east,half=top,sloped=false": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block",
+      "y": 90
+    },
+    "facing=east,half=top,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_top",
+      "y": 90
+    },
+    "facing=south,half=top,sloped=false": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block",
+      "y": 180
+    },
+    "facing=south,half=top,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_top",
+      "y": 180
+    },
+    "facing=west,half=top,sloped=false": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block",
+      "y": 270
+    },
+    "facing=west,half=top,sloped=true": {
+      "model": "camowarfare:block/add_on_armor_plate_military_green_block_slope_top",
       "y": 270
     }
   }

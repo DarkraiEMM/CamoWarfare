@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#camowarfare:attachment_blocks",
+    "#camowarfare:vehicle_deck_hatch_blocks",
     "camowarfare:armor_plate_block",
     "camowarfare:definition_sample_block",
     "camowarfare:definition_sample_64_block",

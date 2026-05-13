@@ -2,7 +2,8 @@
   "multipart": [
     {
       "when": {
-        "facing": "north"
+        "facing": "north",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block"
@@ -10,7 +11,8 @@
     },
     {
       "when": {
-        "facing": "east"
+        "facing": "east",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block",
@@ -19,7 +21,8 @@
     },
     {
       "when": {
-        "facing": "south"
+        "facing": "south",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block",
@@ -28,7 +31,8 @@
     },
     {
       "when": {
-        "facing": "west"
+        "facing": "west",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block",
@@ -38,7 +42,94 @@
     {
       "when": {
         "facing": "north",
-        "left": "true"
+        "half": "bottom",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "top",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "bottom",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "top",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "bottom",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "top",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "bottom",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "top",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "left": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_left"
@@ -47,7 +138,8 @@
     {
       "when": {
         "facing": "east",
-        "left": "true"
+        "left": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_left",
@@ -57,7 +149,8 @@
     {
       "when": {
         "facing": "south",
-        "left": "true"
+        "left": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_left",
@@ -67,7 +160,8 @@
     {
       "when": {
         "facing": "west",
-        "left": "true"
+        "left": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_left",
@@ -77,7 +171,8 @@
     {
       "when": {
         "facing": "north",
-        "right": "true"
+        "right": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_right"
@@ -86,7 +181,8 @@
     {
       "when": {
         "facing": "east",
-        "right": "true"
+        "right": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_right",
@@ -96,7 +192,8 @@
     {
       "when": {
         "facing": "south",
-        "right": "true"
+        "right": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_right",
@@ -106,7 +203,8 @@
     {
       "when": {
         "facing": "west",
-        "right": "true"
+        "right": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_right",
@@ -116,7 +214,8 @@
     {
       "when": {
         "facing": "north",
-        "up": "true"
+        "up": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_up"
@@ -125,7 +224,8 @@
     {
       "when": {
         "facing": "east",
-        "up": "true"
+        "up": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_up",
@@ -135,7 +235,8 @@
     {
       "when": {
         "facing": "south",
-        "up": "true"
+        "up": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_up",
@@ -145,7 +246,8 @@
     {
       "when": {
         "facing": "west",
-        "up": "true"
+        "up": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_up",
@@ -155,7 +257,8 @@
     {
       "when": {
         "facing": "north",
-        "down": "true"
+        "down": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_down"
@@ -164,7 +267,8 @@
     {
       "when": {
         "facing": "east",
-        "down": "true"
+        "down": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_down",
@@ -174,7 +278,8 @@
     {
       "when": {
         "facing": "south",
-        "down": "true"
+        "down": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_down",
@@ -184,10 +289,387 @@
     {
       "when": {
         "facing": "west",
-        "down": "true"
+        "down": "true",
+        "sloped": "false"
       },
       "apply": {
         "model": "camowarfare:block/slat_armor_military_green_block_connect_down",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "bottom",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_left"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "top",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_left"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "bottom",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_left",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "top",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_left",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "bottom",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_left",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "top",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_left",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "bottom",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_left",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "top",
+        "left": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_left",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "bottom",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_right"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "top",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_right"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "bottom",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_right",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "top",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_right",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "bottom",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_right",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "top",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_right",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "bottom",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_right",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "top",
+        "right": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_right",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "bottom",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_up"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "top",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_up"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "bottom",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_up",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "top",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_up",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "bottom",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_up",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "top",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_up",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "bottom",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_up",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "top",
+        "up": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_up",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "bottom",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_down"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "half": "top",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_down"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "bottom",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_down",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "half": "top",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_down",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "bottom",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_down",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "half": "top",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_down",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "bottom",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_bottom_connect_down",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "half": "top",
+        "down": "true",
+        "sloped": "true"
+      },
+      "apply": {
+        "model": "camowarfare:block/slat_armor_military_green_block_slope_top_connect_down",
         "y": 270
       }
     }

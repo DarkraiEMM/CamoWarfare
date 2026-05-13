@@ -1,0 +1,91 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "block/block",
+  "textures": {
+    "hatch": "camowarfare:block/vehicle_deck_hatch_bluegray_block",
+    "handle": "camowarfare:block/vehicle_deck_hatch_bluegray_block_handle",
+    "hinge": "camowarfare:block/vehicle_deck_hatch_bluegray_block_hinge",
+    "particle": "camowarfare:block/vehicle_deck_hatch_bluegray_block"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 0.8, 16],
+      "faces": {
+        "north": { "uv": [0, 0, 16, 16], "texture": "#hatch" },
+        "south": { "uv": [0, 0, 16, 16], "texture": "#hatch" },
+        "east": { "uv": [0, 0, 16, 16], "texture": "#hatch" },
+        "west": { "uv": [0, 0, 16, 16], "texture": "#hatch" },
+        "up": { "uv": [0, 0, 16, 16], "texture": "#hatch" },
+        "down": { "uv": [0, 0, 16, 16], "texture": "#hatch" }
+      }
+    },    {
+      "from": [2.4, 0.8, 2.4],
+      "to": [13.6, 2.35, 13.6],
+      "rotation": { "origin": [8, 1.55, 8], "axis": "y", "angle": 45, "rescale": true },
+      "faces": {
+        "north": { "uv": [2, 2, 14, 14], "texture": "#hatch" },
+        "south": { "uv": [2, 2, 14, 14], "texture": "#hatch" },
+        "east": { "uv": [2, 2, 14, 14], "texture": "#hatch" },
+        "west": { "uv": [2, 2, 14, 14], "texture": "#hatch" },
+        "up": { "uv": [2, 2, 14, 14], "texture": "#hatch" },
+        "down": { "uv": [2, 2, 14, 14], "texture": "#hatch" }
+      }
+    },    {
+      "from": [5, 2.35, 5],
+      "to": [11, 3.45, 11],
+      "faces": {
+        "north": { "uv": [5, 5, 11, 11], "texture": "#hatch" },
+        "south": { "uv": [5, 5, 11, 11], "texture": "#hatch" },
+        "east": { "uv": [5, 5, 11, 11], "texture": "#hatch" },
+        "west": { "uv": [5, 5, 11, 11], "texture": "#hatch" },
+        "up": { "uv": [5, 5, 11, 11], "texture": "#hatch" },
+        "down": { "uv": [5, 5, 11, 11], "texture": "#hatch" }
+      }
+    },    {
+      "from": [-0.25, 1.35, 13.05],
+      "to": [16.25, 4.75, 16.35],
+      "faces": {
+        "north": { "uv": [0, 12, 16, 16], "texture": "#hinge" },
+        "south": { "uv": [0, 12, 16, 16], "texture": "#hinge" },
+        "east": { "uv": [0, 12, 16, 16], "texture": "#hinge" },
+        "west": { "uv": [0, 12, 16, 16], "texture": "#hinge" },
+        "up": { "uv": [0, 12, 16, 16], "texture": "#hinge" },
+        "down": { "uv": [0, 12, 16, 16], "texture": "#hinge" }
+      }
+    },    {
+      "from": [4.2, 3.45, 2.85],
+      "to": [5.2, 4.05, 3.85],
+      "faces": {
+        "north": { "uv": [4, 2, 5, 3], "texture": "#handle" },
+        "south": { "uv": [4, 2, 5, 3], "texture": "#handle" },
+        "east": { "uv": [4, 2, 5, 3], "texture": "#handle" },
+        "west": { "uv": [4, 2, 5, 3], "texture": "#handle" },
+        "up": { "uv": [4, 2, 5, 3], "texture": "#handle" },
+        "down": { "uv": [4, 2, 5, 3], "texture": "#handle" }
+      }
+    },    {
+      "from": [10.8, 3.45, 2.85],
+      "to": [11.8, 4.05, 3.85],
+      "faces": {
+        "north": { "uv": [11, 2, 12, 3], "texture": "#handle" },
+        "south": { "uv": [11, 2, 12, 3], "texture": "#handle" },
+        "east": { "uv": [11, 2, 12, 3], "texture": "#handle" },
+        "west": { "uv": [11, 2, 12, 3], "texture": "#handle" },
+        "up": { "uv": [11, 2, 12, 3], "texture": "#handle" },
+        "down": { "uv": [11, 2, 12, 3], "texture": "#handle" }
+      }
+    },    {
+      "from": [4.2, 4.05, 1.75],
+      "to": [11.8, 4.65, 3.15],
+      "faces": {
+        "north": { "uv": [4, 1, 12, 3], "texture": "#handle" },
+        "south": { "uv": [4, 1, 12, 3], "texture": "#handle" },
+        "east": { "uv": [4, 1, 12, 3], "texture": "#handle" },
+        "west": { "uv": [4, 1, 12, 3], "texture": "#handle" },
+        "up": { "uv": [4, 1, 12, 3], "texture": "#handle" },
+        "down": { "uv": [4, 1, 12, 3], "texture": "#handle" }
+      }
+    }
+  ]
+}

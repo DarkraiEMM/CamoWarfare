@@ -1,0 +1,9 @@
+{
+  "parent": "camowarfare:block/slat_armor_slope_bottom_connect_right_template",
+  "textures": {
+    "frame": "camowarfare:block/solid_night_black/a",
+    "bar": "camowarfare:block/solid_night_black/a",
+    "lip": "camowarfare:block/solid_night_black/a",
+    "particle": "camowarfare:block/solid_night_black/a"
+  }
+}

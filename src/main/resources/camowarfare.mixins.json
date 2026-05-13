@@ -17,6 +17,7 @@
     "CopycatMultiBytePanelModelCoreMixin",
     "CopycatMultiHalfLayerModelCoreMixin",
     "CopycatSlabModelCoreMixin",
+    "CopycatSlopeLayerModelCoreMixin",
     "CopycatStackedMultiHalfLayerModelCoreMixin",
     "CopycatStairsModelCoreMixin",
     "CopycatVerticalMultiHalfLayerModelCoreMixin",

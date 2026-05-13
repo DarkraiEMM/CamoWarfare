@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "camowarfare:us_carc_green383_standard_block"
+    }
+  },
+  "result": {
+    "id": "camowarfare:vehicle_hanging_plate_military_green_block",
+    "count": 8
+  }
+}

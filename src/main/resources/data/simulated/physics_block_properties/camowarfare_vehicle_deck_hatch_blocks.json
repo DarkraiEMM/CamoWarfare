@@ -1,0 +1,7 @@
+{
+  "selector": "#camowarfare:vehicle_deck_hatch_blocks",
+  "properties": {
+    "sable:mass": 0.25,
+    "sable:volume": 1.0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "camowarfare:solid_night_black_standard_block"
+    }
+  },
+  "result": {
+    "id": "camowarfare:slat_armor_night_black_block",
+    "count": 16
+  }
+}

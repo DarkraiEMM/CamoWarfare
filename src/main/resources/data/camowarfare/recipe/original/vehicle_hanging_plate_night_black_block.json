@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "camowarfare:solid_night_black_standard_block"
+    }
+  },
+  "result": {
+    "id": "camowarfare:vehicle_hanging_plate_night_black_block",
+    "count": 8
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "camowarfare:block/slat_armor_slope_top_connect_up_template",
+  "textures": {
+    "frame": "camowarfare:block/slat_armor_frame",
+    "bar": "camowarfare:block/slat_armor_bar",
+    "lip": "camowarfare:block/slat_armor_lip",
+    "particle": "camowarfare:block/slat_armor_frame"
+  }
+}

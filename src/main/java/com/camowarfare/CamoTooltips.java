@@ -14,6 +14,9 @@ final class CamoTooltips {
     }
 
     static String blockKey(String itemId) {
+        if (itemId.contains("vehicle_deck_hatch")) {
+            return "item.camowarfare.tooltip.attachment.vehicle_deck_hatch";
+        }
         if (itemId.contains("vehicle_hanging_plate")) {
             return "item.camowarfare.tooltip.attachment.hanging_plate";
         }
