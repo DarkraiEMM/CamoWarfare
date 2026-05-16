@@ -13,7 +13,10 @@ Adds modular camouflage hull blocks, attachment armor, and grouped creative tabs
 '''
 
 [[mixins]]
-config="camowarfare.mixins.json"
+config="camowarfare.client.mixins.json"
+
+[[mixins]]
+config="camowarfare.copycats.mixins.json"
 
 [[mixins]]
 config="camowarfare.cbc.mixins.json"

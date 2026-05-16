@@ -1,16 +1,21 @@
 # CamoWarfare
 
-CamoWarfare adds modular camouflage hull blocks, armor attachments, slat armor, vehicle hanging plates, and organized creative-tab sections for Minecraft vehicle builders.
+CamoWarfare is a NeoForge mod for Minecraft 1.21.1 that gives vehicle builders a focused toolbox for camouflage hulls, armor detailing, decals, and military-style surface decoration.
 
-The mod focuses on military vehicle decoration and hull detailing. It includes camouflage families for woodland, mountain, desert, snow, night, naval, and urban builds, plus several attachment colors for extra armor detailing.
+Build armored vehicles with standard and large camouflage blocks, add-on armor plates, slat armor, vehicle hanging plates, deck hatches, spray stencils, and worn tactical decals. The creative inventory is organized into themed sections for woodland, mountain, desert, snow, night, naval, urban, and solid-color builds, making large vehicle projects easier to browse and assemble.
+
+迷彩战车是面向 Minecraft 1.21.1 NeoForge 的载具装饰与装甲细节模组，为战车、装甲车、舰船和军事风格建筑提供迷彩车体、外挂装甲、水贴和表面标识工具。
+
+你可以使用标准/大块迷彩车体方块、附加装甲板、格栅装甲、车体挂载板、车厢舱盖、喷涂模板和旧化战术水贴来搭建更有层次的载具外观。创造栏按林地、山地、沙漠、雪地、夜战、海军、城市和纯色等主题整理，适合大型载具工程快速查找和搭配。
 
 ## Features
 
-- Camouflage coating blocks in standard and large variants
-- Add-on armor plates, slat armor, and vehicle hanging plates
+- Camouflage hull blocks in standard and large variants
+- Add-on armor plates, slat armor, vehicle hanging plates, and deck hatches
+- Tactical decals and spray stencil items for markings and identification
 - Grouped creative inventory sections for easier browsing
 - Multiplayer-safe NeoForge mod for Minecraft 1.21.1
-- Optional JEI integration to keep divider helper items out of ingredient listings
+- Optional JEI, Copycats+, and Create Big Cannons compatibility
 - Localizations for English, Simplified Chinese, German, French, and Russian
 
 ## Requirements
@@ -73,10 +78,10 @@ For Modrinth and CurseForge, use:
 - Name: CamoWarfare
 - Mod loader: NeoForge
 - Minecraft version: 1.21.1
-- Version: 1.4.1
+- Version: 1.4.7
 - Release type: Release
 - Required dependency: NeoForge
-- Optional dependency: JEI
+- Optional dependencies: JEI, Copycats+, Create Big Cannons
 - License: All Rights Reserved
 
 

@@ -1,10 +1,10 @@
 {
   "required": false,
+  "minVersion": "0.8",
   "package": "com.camowarfare.mixin",
+  "plugin": "com.camowarfare.compat.copycats.CopycatsCompatMixinPlugin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "AbstractContainerScreenAccessor",
-    "AbstractContainerScreenMixin",
+  "client": [
     "CopycatBeamModelCoreMixin",
     "CopycatByteModelCoreMixin",
     "CopycatCornerSliceModelCoreMixin",
@@ -22,8 +22,7 @@
     "CopycatStairsModelCoreMixin",
     "CopycatVerticalMultiHalfLayerModelCoreMixin",
     "CopycatVerticalStairsModelCoreMixin",
-    "CopycatVerticalStepModelCoreMixin",
-    "CreativeModeInventoryScreenMixin"
+    "CopycatVerticalStepModelCoreMixin"
   ],
   "injectors": {
     "defaultRequire": 1

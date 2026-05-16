@@ -1,5 +1,7 @@
-package com.camowarfare;
+package com.camowarfare.client;
 
+import com.camowarfare.CamoWarfare;
+import com.camowarfare.CreativeSection;
 import java.util.List;
 import java.util.Map;
 import net.minecraft.client.Minecraft;

@@ -1,5 +1,6 @@
 {
   "required": false,
+  "minVersion": "0.8",
   "package": "com.camowarfare.compat.cbc.mixin",
   "plugin": "com.camowarfare.compat.cbc.CbcCompatMixinPlugin",
   "compatibilityLevel": "JAVA_21",

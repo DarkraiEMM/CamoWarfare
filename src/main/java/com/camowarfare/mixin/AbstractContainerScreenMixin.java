@@ -1,6 +1,6 @@
 package com.camowarfare.mixin;
 
-import com.camowarfare.CreativeDividerRenderer;
+import com.camowarfare.client.CreativeDividerRenderer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;

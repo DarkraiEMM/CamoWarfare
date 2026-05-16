@@ -1,5 +1,25 @@
 # CamoWarfare Changelog
 
+## 1.4.7
+
+### English
+
+- Split client-only GUI mixins and optional Copycats+ rendering mixins into dedicated mixin configs so dedicated servers no longer attempt to inspect client screen or model-rendering classes.
+- Added a Copycats+ mixin plugin that checks the current side and target class availability before applying optional compatibility mixins, reducing noisy missing-target logs when Copycats+ is absent.
+- Moved the creative-tab divider renderer into the client package so common/server code no longer carries direct `net.minecraft.client` imports for that UI path.
+- Changed Copycats+ camouflage render state from a shared global boolean to thread-local state to avoid cross-render leakage.
+- Added explicit Mixin `minVersion` metadata to the CamoWarfare mixin configs.
+- Verified the release with a clean Gradle build and a dedicated-server startup smoke test.
+
+### 中文
+
+- 将仅客户端使用的创造栏 GUI mixin 和可选 Copycats+ 渲染 mixin 拆分到独立配置中，避免专用服务器继续检查客户端界面或模型渲染类。
+- 新增 Copycats+ mixin 插件，在应用可选兼容 mixin 前检查当前运行端和目标类是否存在，减少未安装 Copycats+ 时的缺失目标日志。
+- 将创造栏分区标题渲染器移动到客户端包，避免 common/server 路径直接携带 `net.minecraft.client` 引用。
+- 将 Copycats+ 迷彩渲染状态从全局布尔值改为线程局部状态，避免不同渲染过程互相串状态。
+- 为 CamoWarfare 的 mixin 配置补充明确的 Mixin `minVersion` 元数据。
+- 已通过干净 Gradle 构建和专用服务器启动冒烟测试验证。
+
 ## 1.4.6
 
 ### English
